@@ -24,7 +24,6 @@ zypper install -y \
     git \
     grub2-x86_64-efi \
     jq \
-    lsb-release \
     lvm2 \
     parted \
     rsync \

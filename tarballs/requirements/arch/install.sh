@@ -26,7 +26,6 @@ pacman -Syu --noconfirm --needed \
 		jq \
 		libarchive \
 		libisoburn \
-		lsb-release \
 		lvm2 \
 		mkinitcpio-archiso \
 		mkinitcpio-nfs-utils \

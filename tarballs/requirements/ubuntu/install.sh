@@ -26,7 +26,6 @@ apt-get install -y \
     live-boot-initramfs-tools \
     live-config-systemd \
     live-tools \
-    lsb-release \
     lvm2 \
     parted \
     rsync \
