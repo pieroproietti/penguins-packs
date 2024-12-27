@@ -47,7 +47,6 @@ dnf -y install \
     grub2-efi-x64-modules \
     grub2-tools-extra \
     jq \
-    lsb-release \
     lvm2 \
     nvme-cli \
     parted \

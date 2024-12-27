@@ -27,7 +27,6 @@ pacman -Syu --noconfirm --needed \
 	jq \
 	libarchive \
 	libisoburn \
-	lsb-release \
 	lvm2 \
 	manjaro-tools-iso \
 	mkinitcpio-nfs-utils \

@@ -20,7 +20,6 @@ depends="
  git
  fuse
  lsblk
- lsb-release
  lvm2
  jq
  mkinitfs

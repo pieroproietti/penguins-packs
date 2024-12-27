@@ -46,7 +46,6 @@ apk add \
     fuse \
     git \
     jq \
-    lsb-release \
     lsblk \
     lvm2 \
     man-pages \

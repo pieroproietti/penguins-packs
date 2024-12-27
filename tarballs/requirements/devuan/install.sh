@@ -27,7 +27,6 @@ apt-get install -y \
     live-boot-initramfs-tools \
     live-config-sysvinit \
     live-tools \
-    lsb-release \
     lvm2 \
     parted \
     rsync \
