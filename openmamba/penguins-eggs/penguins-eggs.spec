@@ -1,5 +1,5 @@
 Name:          penguins-eggs
-Version:       10.0.56
+Version:       10.0.57
 Release:       1mamba
 Summary:       A console tool that allows you to remaster your system and redistribute it as live images on USB sticks or via PXE
 Group:         System/Tools
@@ -88,6 +88,7 @@ ln -s ../lib/%{name}/bin/run.js %{buildroot}%{_bindir}/eggs
 %doc README.md
 
 %%changelog
+* Sat Dec 28 2024 Piero Proietti <piero.proietti@gmail.com> - 10.0.57-1mamba
 * Wed Dec 18 2024 Piero Proietti <piero.proietti@gmail.com> - 10.0.56-1mamba
 * Fri Dec 13 2024 Piero Proietti <piero.proietti@gmail.com> - 10.0.55-1mamba
 * Sun Dec 01 2024 Silvan Calarco, Piero Proietti <piero.proietti@gmail.com> - 10.0.54-1mamba
