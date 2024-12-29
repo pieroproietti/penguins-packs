@@ -5,7 +5,7 @@ Install penguins-eggs with a tarball, tested on almalinux, fedora, rockylinuz.
 
 ## Usage
 
-Download the tarball from [sourceforge](https://sourceforge.net/projects/penguins-eggs/files/Packages/TARBALLS/), then:
+Download the tarball from [https://penguins-eggs.net/basket](https://penguins-eggs.net/basket/index.php?p=packages%2Ftarballs), then:
 
 * `git clone https://github.com/pieroproietti/penguins-packs`
 * `cd penguins-packs/tarballs`
