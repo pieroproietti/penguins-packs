@@ -22,7 +22,7 @@ fi
 # update
 dnf -y update
 
-dnf -y install \
+dnf -y --no-best install \
     bash-completion \
     cryptsetup \
     curl \
