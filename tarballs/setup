@@ -116,6 +116,10 @@ function install_requirements() {
             $SUDO ./requirements/manjarolinux/install.sh
             ;;
 
+        nobara)
+            $SUDO ./requirements/nobara/install.sh
+            ;;
+
         openmamba)
             $SUDO ./requirements/openmamba/install.sh
             ;;

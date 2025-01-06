@@ -13,7 +13,7 @@ fi
 if [ ! -f /etc/fedora-release ]; then
     if [ ! -f /etc/nobara-release ]; then
         if [ ! -f /etc/openmamba-release ]; then
-            echo "This script is intended for fedora, nobaralinux or openmamba!"
+            echo "This script is intended for fedora, nobara or openmamba!"
             exit 1
         fi
     fi
