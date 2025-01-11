@@ -1,7 +1,7 @@
 pkgbase = calamares-eggs
 	pkgdesc = calamares-eggs: supply by penguins-eggs project
 	pkgver = 3.3.12
-	pkgrel = 2
+	pkgrel = 1
 	url = https://github.com/calamares/calamares
 	arch = i686
 	arch = x86_64
@@ -32,7 +32,7 @@ pkgbase = calamares-eggs
 	depends = yaml-cpp
 	provides = calamares=3.3.12
 	conflicts = calamares
-	source = git+https://github.com/calamares/calamares#commit=d4847ce802452c1e26605a64ba06d40c4736d742
+	source = git+https://github.com/calamares/calamares#commit=f594bfb5e35479cecce2bf336465edc6dc7a4bc5
 	sha256sums = SKIP
 
 pkgname = calamares-eggs
