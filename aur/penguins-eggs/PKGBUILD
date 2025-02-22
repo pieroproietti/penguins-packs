@@ -2,7 +2,7 @@
 #
 # mantainer: Muflone http://www.muflone.com/contacts/english/
 # contributor: Piero Proietti <piero.proietti_at_gmail.com>
-_commit=739d151bf7182a68c6c89535a900e58cae8b5930
+_commit=cc3b657b02c213cfb2c15cd02bfc7b40867ab262
 pkgname=penguins-eggs
 pkgver=10.0.58
 pkgrel=6
@@ -74,6 +74,7 @@ package() {
   ipxe \
   dracut \
   dist \
+  efi \
   eui \
   mkinitcpio \
   mkinitfs \
