@@ -16,3 +16,10 @@ Although the setup command, is a simple bash script, and MUST be started as a co
 penguins-eggs will be installed under the `/opt/penguins-eggs/ ` directory.
 
 
+## BUILD tarballs
+
+* `git clone https://github.com/pieroproietti/penguins-eggs`
+* `cd penguins-eggs`
+* `pnpm i`
+* `pnpm tarballs`
+* `./eggs export tarballs -c`
