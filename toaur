@@ -1,3 +1,4 @@
+echo "ricordati di copiare id_ed25519 in .ssh"
 git clone ssh://aur@aur.archlinux.org/penguins-eggs.git AUR-DEST
 cp aur/penguins-eggs/PKGBUILD AUR-DEST
 cp aur/penguins-eggs/.SRCINFO AUR-DEST
