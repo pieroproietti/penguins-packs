@@ -1,7 +1,7 @@
 pkgbase = calamares-eggs
 	pkgdesc = calamares-eggs: supply by penguins-eggs project
 	pkgver = 3.3.14
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/calamares/calamares
 	arch = i686
 	arch = x86_64
