@@ -24,7 +24,7 @@ function install_tarball() {
     fi
 
     # Estrazione e installazione del pacchetto
-    tar -xf "$EGGS_PACKAGE"
+    tar -xzf "$EGGS_PACKAGE"
     if [ $? -ne 0 ]; then
         echo "Error: not possoble extract $EGGS_PACKAGE."
         exit 1
