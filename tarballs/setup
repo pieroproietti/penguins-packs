@@ -152,6 +152,7 @@ echo ""
 
 # Se l'utente è root, abortisci
 if [ "$(id -u)" -eq 0 ]; then
+    echo "dont'use root!"
     echo "usage: setup /path/to/tarball [requirements]"
     exit 1
 fi
