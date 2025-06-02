@@ -3,7 +3,7 @@
 # Maintainer: Mark Wagie <mark at manjaro dot org>
 # Contributor: Stefano Capitani <stefano_at_manjaro_org>
 # Contributor: Piero Proietti <piero.proietti_at_gmail.com>
-_commit=8aa0f744e40783599d7324c5a7ee6d3b5b63d020
+_commit=33b835e93f45518dbcca0b68de3ca193c3f7654b
 pkgname=penguins-eggs
 pkgver=10.1.1
 pkgrel=4
