@@ -1,9 +1,0 @@
-# Ignore everything in penguins-eggs
-*
-
-# But not these files...
-!.gitignore
-!APKBUILD
-!clean
-!README.md
-!penguins-eggs.*
