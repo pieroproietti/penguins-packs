@@ -2,7 +2,7 @@
 #
 # mantainer: Muflone http://www.muflone.com/contacts/english/
 # contributor: Piero Proietti <piero.proietti_at_gmail.com>
-_commit=f8e5c1d298ba0d33d82b7a14c79b4bd818dadf25
+_commit=d88567e340724aecc7c95c71bdc209daf57694af
 pkgname=penguins-eggs
 pkgver=10.1.1
 pkgrel=12
@@ -61,27 +61,31 @@ build() {
  cd "$srcdir"/"$pkgname"
  pnpm install
  pnpm build  
+ rm -rf node_modules
+ pnpm install --prod --offline
+
 }
 
 package() {
  cd "$srcdir"/"$pkgname"
 
  install -Dm644 .oclif.manifest.json package.json -t "$pkgdir/"usr/lib/"$pkgname"
+ install -Dm644 .oclif.manifest.json package.json -t "$pkgdir/"usr/lib/"$pkgname"
  cp -r addons \
-  assets \
-  bin \
-  conf \
-  ipxe \
-  dracut \
-  dist \
-  eui \
-  mkinitcpio \
-  mkinitfs \
-  node_modules \
-  scripts \
-  syslinux \
-  "$pkgdir/"usr/lib/"$pkgname/"
-
+    assets \
+    bin \
+    conf \
+    ipxe \
+    dracut \
+    dist \
+    eui \
+    mkinitcpio \
+    mkinitfs \
+    node_modules \
+    scripts \
+    syslinux \
+    "$pkgdir/usr/lib/$pkgname/"
+ 
  # Fix permissions
  chown root:root "$pkgdir/"usr/lib/"$pkgname/"
 
