@@ -3,10 +3,10 @@
 # Maintainer: Mark Wagie <mark at manjaro dot org>
 # Contributor: Stefano Capitani <stefano_at_manjaro_org>
 # Contributor: Piero Proietti <piero.proietti_at_gmail.com>
-_commit=c22a897110d53ca795c0e76adef927ac9dbafe27
+_commit=424bc7f56e59c09d70a40bb5ad4de6a006a4f3b1
 pkgname=penguins-eggs
-pkgver=10.1.1
-pkgrel=24
+pkgver=25.7.10
+pkgrel=1
 pkgdesc="A console tool that allows you to remaster your system and redistribute it as live images on USB sticks or via PXE"
 arch=('any')
 url="https://penguins-eggs.net"
@@ -70,16 +70,14 @@ package() {
  cp -r addons \
   assets \
   bin \
+  bootloaders \
   conf \
-  ipxe \
   dracut \
   dist \
   eui \
   mkinitcpio \
-  mkinitfs \
   node_modules \
   scripts \
-  syslinux \
   "$pkgdir/"usr/lib/"$pkgname/"
 
  # Fix permissions
