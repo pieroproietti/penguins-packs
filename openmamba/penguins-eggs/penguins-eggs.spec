@@ -36,16 +36,13 @@ cp -r \
    addons \
    assets \
    bin \
+   bootloaders \
    conf \
-   ipxe \
    dracut \
    dist \
    eui \
-   mkinitcpio \
-   mkinitfs \
    node_modules \
    scripts \
-   syslinux \
    %{buildroot}%{_prefix}/lib/%{name}
 
 # Install bash-completion files
