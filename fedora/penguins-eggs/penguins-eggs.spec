@@ -15,10 +15,17 @@
 %global app_name penguins-eggs
 %global nodejs_prefix %{_prefix}/lib/%{app_name}
 
+# Non generare il pacchetto di debug, che causa problemi con i binari pre-compilati
+%global debug_package %{nil}
+
+
+
 Name:           %{app_name}
 Version:        25.7.14
 Release:        1%{?dist}
 Summary:        A console tool to remaster your system and create live images
+# rimuove scoperta dipendenze
+AutoReqProv: no
 
 License:        GPL-3.0-or-later
 URL:            https://penguins-eggs.net/
@@ -36,7 +43,6 @@ Requires:       bash-completion
 Requires:       cryptsetup
 Requires:       curl
 Requires:       device-mapper
-Requires:       dmraid
 Requires:       dosfstools
 Requires:       dracut
 Requires:       efibootmgr
@@ -79,7 +85,6 @@ cp -r \
     dracut \
     dist \
     eui \
-    mkinitfs \
     node_modules \
     scripts \
     %{buildroot}%{nodejs_prefix}/
