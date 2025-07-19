@@ -61,7 +61,6 @@ A console tool that allows you to remaster your system and redistribute it as li
 %setup -q -n %{app_name}-%{version}
 
 %build
-%set_node_env
 pnpm install --frozen-lockfile
 pnpm build
 
@@ -107,7 +106,7 @@ install -d -m 755 %{buildroot}%{_datadir}/pixmaps
 install -m 644 assets/eggs.png %{buildroot}%{_datadir}/pixmaps/eggs.png
 
 %files
-%license LICENSE
+#%license LICENSE
 %doc README.md
 %{_bindir}/eggs
 %dir %{nodejs_prefix}
