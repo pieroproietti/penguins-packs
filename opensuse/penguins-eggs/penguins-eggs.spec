@@ -46,21 +46,23 @@ BuildRequires:  nodejs
 BuildRequires:  pnpm
 
 # Dipendenze di runtime per openSUSE
+Requires:       bash
 Requires:       bash-completion
 Requires:       cryptsetup
 Requires:       curl
 Requires:       device-mapper
 Requires:       dosfstools
 Requires:       dracut
+Requires:       dracut-extra
 Requires:       dracut-tools
 Requires:       efibootmgr
 Requires:       fuse
-Requires:       git-core
+Requires:       git
+Requires:       grub2-x86_64-efi
 Requires:       jq
 Requires:       lvm2
 Requires:       nodejs
 Requires:       nvme-cli
-Requires:       parted
 Requires:       rsync
 Requires:       shadow
 Requires:       squashfs
