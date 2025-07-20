@@ -22,7 +22,7 @@
 
 Name:           %{app_name}
 Version:        25.7.14
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A console tool to remaster your system and create live images
 # rimuove scoperta dipendenze
 AutoReqProv: no
@@ -45,6 +45,7 @@ Requires:       curl
 Requires:       device-mapper
 Requires:       dosfstools
 Requires:       dracut
+Requires:       dracut-live
 Requires:       efibootmgr
 Requires:       fuse
 Requires:       git
