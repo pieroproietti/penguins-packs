@@ -1,0 +1,4 @@
+
+echo "--- Esport pkg... ---"
+scp ~/rpmbuild/RPMS/x86_64/penguins-eggs-*.fc42.x86_64.rpm root@192.168.1.2:/eggs/fedora
+scp ~/rpmbuild/SRPMS/penguins-eggs-25.*.fc42.src.rpm root@192.168.1.2:/eggs/fedora

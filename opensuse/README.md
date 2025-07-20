@@ -1,7 +1,7 @@
-# Fedora
+# OpenSUSE
 
 ```
-sudo dnf install \
+sudo zypper install \
     gcc-c++ \
     make \
     rpm-build \
