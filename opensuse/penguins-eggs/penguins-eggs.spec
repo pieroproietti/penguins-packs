@@ -62,6 +62,8 @@ Requires:       nodejs
 Requires:       nvme-cli
 Requires:       parted
 Requires:       rsync
+Requires:       shadow
+Requires:       squashfs
 Requires:       sshfs
 Requires:       wget
 Requires:       xdg-user-dirs
