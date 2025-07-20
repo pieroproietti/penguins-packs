@@ -40,4 +40,4 @@ mkdir -p ~/rpmbuild/SOURCES/
 echo "Moving ${LOCAL_FILENAME} to rpmbuild/SOURCES/"
 mv "${LOCAL_FILENAME}" ~/rpmbuild/SOURCES/
 echo "Building package..."
-/usr/bin/rpmbuild -bb ./penguins-eggs.spec
+/usr/bin/rpmbuild -bb --define "dist .opensuse" ./penguins-eggs.spec

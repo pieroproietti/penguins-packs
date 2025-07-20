@@ -3,10 +3,7 @@
 echo "--- Pulizia dei tentativi precedenti... ---"
 rm -rf ~/rpmbuild/BUILD/*
 rm -rf ~/rpmbuild/BUILDROOT/*
-echo "--- Pulizia completata. ---"
-
-#
-# Qui va il resto del tuo script di build
-# (ad esempio, il comando rpmbuild)
-#
+rm -rf ~/rpmbuild/RPMS/*
+rm -rf ~/rpmbuild/SRPMS/*
+rm -rf ~/rpmbuild/SOURCES/*
 echo "--- Avvia la nuova build... ---"

@@ -26,7 +26,7 @@
 Name:           %{app_name}
 Version:        25.7.14
 # La convenzione di openSUSE per la release è iniziare da 0
-Release:        0
+Release:        1%{?dist}
 Summary:        A console tool to remaster your system and create live images
 # Manteniamo la disattivazione delle dipendenze automatiche a causa dei moduli nodejs inclusi (bundled)
 AutoReqProv:    no
