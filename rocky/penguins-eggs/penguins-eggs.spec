@@ -20,7 +20,7 @@
 
 Name:           %{app_name}
 Version:        25.7.14
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        A console tool to remaster your system and create live images
 # rimuove scoperta dipendenze
 AutoReqProv: no
@@ -37,29 +37,33 @@ Provides:       bundled(nodejs-module)
 # Use nodejs-devel which includes npm. pnpm is not in the default repos.
 BuildRequires:  gcc-c++
 BuildRequires:  make
-BuildRequires:  nodejs-devel
+BuildRequires:  nodejs
 
-# Dependencies are mostly the same between Fedora and Rocky
-Requires:       bash-completion
-Requires:       cryptsetup
-Requires:       curl
-Requires:       device-mapper
-Requires:       dosfstools
-Requires:       dracut
-Requires:       dracut-live
-Requires:       efibootmgr
-Requires:       fuse
-Requires:       git
-Requires:       jq
-Requires:       lvm2
+# Dependencies artd
+Requires:       bash-completion 
+Requires:       cryptsetup 
+Requires:       curl 
+Requires:       device-mapper 
+Requires:       dosfstools 
+Requires:       dracut 
+Requires:       dracut-live 
+Requires:       fuse 
+Requires:       Requires:       git 
+Requires:       grub2-efi-x64 
+Requires:       grub2-efi-x64-modules 
+Requires:       grub2-tools-extra 
+Requires:       jq 
+Requires:       lsb-release 
+Requires:       lvm2 
 Requires:       nodejs
-Requires:       nvme-cli
+Requires:       nvme-cli 
 Requires:       parted
-Requires:       rsync
-Requires:       sshfs
-Requires:       wget
-Requires:       xdg-utils
-Requires:       xorriso
+Requires:       rsync 
+Requires:       sshfs 
+Requires:       squashfs-tools 
+Requires:       wget 
+Requires:       xdg-user-dirs 
+Requires:       xorriso 
 Requires:       zstd
 
 %description
@@ -70,9 +74,9 @@ A console tool that allows you to remaster your system and redistribute it as li
 
 %build
 # Use npm which is standard on Rocky/RHEL systems
-# 'npm ci' is preferred for builds as it uses the lockfile for reproducible installs
-npm ci
-npm run build
+sudo npm install -g pnpm@8
+pnpm i
+pnpm run build
 
 %install
 # Install main application files
