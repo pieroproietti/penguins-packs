@@ -53,7 +53,6 @@ Requires:       grub2-efi-x64
 Requires:       grub2-efi-x64-modules 
 Requires:       grub2-tools-extra 
 Requires:       jq 
-Requires:       lsb-release 
 Requires:       lvm2 
 Requires:       nodejs
 Requires:       nvme-cli 
