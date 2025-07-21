@@ -7,3 +7,6 @@ sudo zypper install \
     rpm-build \
     rpmdevtools
 ```
+
+## SELINUX
+Disable selinux, used on OpenSUSE showroll.
