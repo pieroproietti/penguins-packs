@@ -14,4 +14,4 @@ fi
 echo "Download sources..."
 spectool -g -R penguins-eggs.spec
 echo "Building package..."
-/usr/bin/rpmbuild -bb ./penguins-eggs.spec
+/usr/bin/rpmbuild -bb --define "dist .rocky9" ./penguins-eggs.spec

@@ -13,3 +13,9 @@ sudo dnf install \
 ```
 sudo dnf install setxkbmap
 ```
+
+### epel
+We need to enable epel
+```
+sudo dnf install epel-release -y
+```
