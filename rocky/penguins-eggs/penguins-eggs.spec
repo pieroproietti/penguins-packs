@@ -48,7 +48,7 @@ Requires:       dosfstools
 Requires:       dracut 
 Requires:       dracut-live 
 Requires:       fuse 
-Requires:       Requires:       git 
+Requires:       git 
 Requires:       grub2-efi-x64 
 Requires:       grub2-efi-x64-modules 
 Requires:       grub2-tools-extra 
