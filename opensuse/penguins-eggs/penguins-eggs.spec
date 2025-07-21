@@ -1,7 +1,3 @@
-# Disattiva la firma del pacchetto
-%define _signature gpg
-%define _gpg_name none
-
 #
 # spec file for package penguins-eggs
 #
@@ -23,9 +19,12 @@
 # Non generare il pacchetto di debug
 %global debug_package %{nil}
 
+# Disattiva la firma del pacchetto
+%define _signature gpg
+%define _gpg_name none
+
 Name:           %{app_name}
 Version:        25.7.14
-# La convenzione di openSUSE per la release è iniziare da 0
 Release:        1%{?dist}
 Summary:        A console tool to remaster your system and create live images
 # Manteniamo la disattivazione delle dipendenze automatiche a causa dei moduli nodejs inclusi (bundled)
