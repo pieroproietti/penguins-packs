@@ -1,4 +1,4 @@
-# ROCKY LINUX/ALMALINUX
+# el9
 # spec file for package penguins-eggs
 #
 # Copyright (c) 2025 Piero Proietti

@@ -1,4 +1,4 @@
-# RHEL/ROCKY
+# el9
 
 ```
 sudo dnf install \
@@ -24,8 +24,11 @@ sudo dnf install epel-release -y
 We need node >18:
 
 ```
-curl -fsSL https://rpm.nodesource.com/setup_22.x -o nodesource_setup.sh
+curl -fsSL https://rpm.nodesource.com/setup_20.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo dnf install -y nodejs
 ```
-
+###
+```
+sudo usermod -aG wheel artisan
+```
