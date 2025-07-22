@@ -49,9 +49,6 @@ Requires:       dracut
 Requires:       dracut-live 
 Requires:       fuse 
 Requires:       git 
-Requires:       grub2-efi-x64 
-Requires:       grub2-efi-x64-modules 
-Requires:       grub2-tools-extra 
 Requires:       jq 
 Requires:       lvm2 
 Requires:       nodejs
