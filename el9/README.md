@@ -8,27 +8,21 @@ sudo dnf install \
     rpmdevtools
 ```
 
+# SELINUX
 
-## setxkbmap
+Edit /etc/selinux/config and put:
 ```
-sudo dnf install setxkbmap
-```
-
-### epel
-We need to enable epel
-```
-sudo dnf install epel-release -y
+SELINUX=permissive
 ```
 
-### nodesource
-We need node >18:
+### epel, nodesource
+We need to enable epel and get nodejs>18.
 
 ```
-curl -fsSL https://rpm.nodesource.com/setup_20.x -o nodesource_setup.sh
-sudo bash nodesource_setup.sh
-sudo dnf install -y nodejs
+./install-prerequisites.sh
 ```
-###
+### sudo
+Enable user to sudo
 ```
 sudo usermod -aG wheel artisan
 ```
