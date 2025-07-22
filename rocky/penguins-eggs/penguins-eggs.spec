@@ -73,7 +73,7 @@ A console tool that allows you to remaster your system and redistribute it as li
 
 %build
 # Use npm which is standard on Rocky/RHEL systems
-sudo npm install -g pnpm@8
+sudo npm install -g pnpm
 pnpm i
 pnpm run build
 
