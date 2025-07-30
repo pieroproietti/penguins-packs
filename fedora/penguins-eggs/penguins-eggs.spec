@@ -21,7 +21,7 @@
 
 
 Name:           %{app_name}
-Version:        25.7.22
+Version:        25.7.30
 Release:        1%{?dist}
 Summary:        A console tool to remaster your system and create live images
 # rimuove scoperta dipendenze
