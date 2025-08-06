@@ -19,7 +19,7 @@
 %global debug_package %{nil}
 
 Name:           %{app_name}
-Version:        25.7.30
+Version:        25.8.6
 Release:        1%{?dist}
 Summary:        A console tool to remaster your system and create live images
 # rimuove scoperta dipendenze
