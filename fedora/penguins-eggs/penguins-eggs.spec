@@ -21,7 +21,7 @@
 
 
 Name:           %{app_name}
-Version:        25.8.6
+Version:        25.8.10
 Release:        1%{?dist}
 Summary:        A console tool to remaster your system and create live images
 # rimuove scoperta dipendenze
@@ -30,6 +30,7 @@ AutoReqProv: no
 License:        GPL-3.0-or-later
 URL:            https://penguins-eggs.net/
 Source0:        https://github.com/pieroproietti/penguins-eggs/archive/v%{version}/%{app_name}-%{version}.tar.gz
+Source1:        https://github.com/pieroproietti/penguins-eggs/releases/download/v%{version}/bootloaders.tar.gz
 
 # Fedora uses system-provided nodejs libraries where possible.
 # We bundle them here as per nodejs packaging guidelines when they can't be unbundled.
@@ -67,6 +68,9 @@ A console tool that allows you to remaster your system and redistribute it as li
 %prep
 %setup -q -n %{app_name}-%{version}
 
+# Ora estraiamo Source1 nella directory di build principale
+tar -xzf %{SOURCE1} -C ../
+
 %build
 pnpm install --frozen-lockfile
 pnpm build
@@ -81,7 +85,6 @@ cp -r \
     addons \
     assets \
     bin \
-    bootloaders \
     conf \
     dracut \
     dist \
@@ -89,6 +92,9 @@ cp -r \
     node_modules \
     scripts \
     %{buildroot}%{nodejs_prefix}/
+
+# La cartella si trova in ../bootloaders rispetto alla directory corrente
+cp -r ../bootloaders %{buildroot}%{nodejs_prefix}/
 
 # Install executable symlink
 install -d -m 755 %{buildroot}%{_bindir}
