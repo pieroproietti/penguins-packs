@@ -19,7 +19,7 @@
 %global debug_package %{nil}
 
 Name:           %{app_name}
-Version:        25.8.6
+Version:        25.8.10
 Release:        1%{?dist}
 Summary:        A console tool to remaster your system and create live images
 # rimuove scoperta dipendenze
@@ -28,6 +28,8 @@ AutoReqProv: no
 License:        GPL-3.0-or-later
 URL:            https://penguins-eggs.net/
 Source0:        https://github.com/pieroproietti/penguins-eggs/archive/v%{version}/%{app_name}-%{version}.tar.gz
+Source1:        https://github.com/pieroproietti/penguins-eggs/releases/download/v%{version}/bootloaders.tar.gz
+
 
 # Provides a virtual dependency for the bundled nodejs modules
 # This is a good practice followed by Fedora and applicable here too.
@@ -68,6 +70,9 @@ A console tool that allows you to remaster your system and redistribute it as li
 %prep
 %setup -q -n %{app_name}-%{version}
 
+# >> ESTRAI BOOTLOADERS DA SOURCE1
+tar -xzf %{SOURCE1} -C ../
+
 %build
 # Use npm which is standard on Rocky/RHEL systems
 sudo npm install -g pnpm
@@ -84,7 +89,6 @@ cp -r \
     addons \
     assets \
     bin \
-    bootloaders \
     conf \
     dracut \
     dist \
@@ -92,6 +96,10 @@ cp -r \
     node_modules \
     scripts \
     %{buildroot}%{nodejs_prefix}/
+
+# >> SOVRASCRIVI CON I BOOTLOADERS CORRETTI
+cp -r ../bootloaders %{buildroot}%{nodejs_prefix}/
+
 
 # Install executable symlink
 install -d -m 755 %{buildroot}%{_bindir}
