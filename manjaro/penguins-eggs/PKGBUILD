@@ -3,9 +3,9 @@
 # Maintainer: Mark Wagie <mark at manjaro dot org>
 # Contributor: Stefano Capitani <stefano_at_manjaro_org>
 # Contributor: Piero Proietti <piero.proietti_at_gmail.com>
-_commit=3312b8c47e26122d432ec3c26658315e02351b49
+_commit=1d1568106803db4a5d4ac28bc36e181ed08b1db6
 pkgname=penguins-eggs
-pkgver=25.8.6
+pkgver=25.8.10
 pkgrel=1
 pkgdesc="A console tool that allows you to remaster your system and redistribute it as live images on USB sticks or via PXE"
 arch=('any')
