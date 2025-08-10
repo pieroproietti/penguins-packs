@@ -2,7 +2,7 @@
 #
 # mantainer: Muflone http://www.muflone.com/contacts/english/
 # contributor: Piero Proietti <piero.proietti_at_gmail.com>
-_commit=1d1568106803db4a5d4ac28bc36e181ed08b1db6
+_commit=f3eca5433161d4e18f2459db3d6f67fbba73d3ea
 pkgname=penguins-eggs
 pkgver=25.8.10
 pkgrel=1
@@ -50,8 +50,10 @@ makedepends=(
 )
 
 options=('!strip')
-source=("git+https://github.com/pieroproietti/penguins-eggs.git#commit=$_commit"
-"bootloaders.tar.gz")
+source=(
+  "git+https://github.com/pieroproietti/penguins-eggs.git#commit=$_commit"
+  "bootloaders.tar.gz::https://github.com/pieroproietti/penguins-eggs/releases/download/v25.8.10/bootloaders.tar.gz"
+)
 
 
 pkgver() {
@@ -125,5 +127,7 @@ package() {
  # Symlink to adapt
  ln -s /usr/lib/"$pkgname/"addons/eggs/adapt/bin/adapt "$pkgdir/"usr/bin/adapt
 }
-sha256sums=('SKIP'
+
+# updpkgsums
+sha256sums=('c09bc394900cbf165fb7d4637e4a867bc96d5c595fa5b6d6d755df196a691e21'
             'b87679fc108d86b406157bccc97a28e1d950afc6ab24d7da7c7cbebacb9690c4')

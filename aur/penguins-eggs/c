@@ -1,1 +1,1 @@
-rm p* s* -rf
+rm bootloaders.tar.gz p* s* -rf 

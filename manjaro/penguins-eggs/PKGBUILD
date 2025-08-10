@@ -119,3 +119,5 @@ package() {
  # Symlink to adapt
  ln -s /usr/lib/"$pkgname/"addons/eggs/adapt/bin/adapt "$pkgdir/"usr/bin/adapt
 }
+
+# updpkgsums
