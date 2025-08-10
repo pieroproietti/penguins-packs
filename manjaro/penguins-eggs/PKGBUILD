@@ -3,7 +3,7 @@
 # Maintainer: Mark Wagie <mark at manjaro dot org>
 # Contributor: Stefano Capitani <stefano_at_manjaro_org>
 # Contributor: Piero Proietti <piero.proietti_at_gmail.com>
-_commit=1d1568106803db4a5d4ac28bc36e181ed08b1db6
+_commit=f3eca5433161d4e18f2459db3d6f67fbba73d3ea
 pkgname=penguins-eggs
 pkgver=25.8.10
 pkgrel=1
@@ -49,8 +49,10 @@ makedepends=(
 )
 
 options=('!strip')
-source=("git+https://github.com/pieroproietti/penguins-eggs.git#commit=$_commit")
-sha256sums=('SKIP')
+source=(
+  "git+https://github.com/pieroproietti/penguins-eggs.git#commit=$_commit"
+  "bootloaders.tar.gz::https://github.com/pieroproietti/penguins-eggs/releases/download/v25.8.10/bootloaders.tar.gz"
+)
 
 pkgver() {
  cd "$srcdir"/"$pkgname"
@@ -70,7 +72,6 @@ package() {
  cp -r addons \
   assets \
   bin \
-  bootloaders \
   conf \
   dist \
   eui \
@@ -78,6 +79,8 @@ package() {
   node_modules \
   scripts \
   "$pkgdir/"usr/lib/"$pkgname/"
+
+cp -r "$srcdir/bootloaders" "$pkgdir/usr/lib/$pkgname/"
 
  # Fix permissions
  chown root:root "$pkgdir/"usr/lib/"$pkgname/"
@@ -121,3 +124,5 @@ package() {
 }
 
 # updpkgsums
+sha256sums=('c09bc394900cbf165fb7d4637e4a867bc96d5c595fa5b6d6d755df196a691e21'
+            'b87679fc108d86b406157bccc97a28e1d950afc6ab24d7da7c7cbebacb9690c4')
