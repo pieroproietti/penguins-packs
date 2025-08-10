@@ -24,7 +24,7 @@
 %define _gpg_name none
 
 Name:           %{app_name}
-Version:        25.8.6
+Version:        25.8.10
 Release:        1%{?dist}
 Summary:        A console tool to remaster your system and create live images
 # Manteniamo la disattivazione delle dipendenze automatiche a causa dei moduli nodejs inclusi (bundled)
@@ -33,6 +33,8 @@ AutoReqProv:    no
 License:        GPL-3.0-or-later
 URL:            https://penguins-eggs.net/
 Source0:        https://github.com/pieroproietti/penguins-eggs/archive/v%{version}/%{app_name}-%{version}.tar.gz
+Source1:        https://github.com/pieroproietti/penguins-eggs/releases/download/v%{version}/bootloaders.tar.gz
+
 
 # NOTA: La direttiva "Provides: bundled(nodejs-module)" è una convenzione di Fedora
 # e viene omessa su openSUSE. La gestione dei moduli nodejs è affidata a pnpm.
@@ -80,6 +82,9 @@ A console tool that allows you to remaster your system and redistribute it as li
 %prep
 %setup -q -n %{app_name}-%{version}
 
+# >> ESTRAI BOOTLOADERS DA SOURCE1
+tar -xzf %{SOURCE1} -C ../
+
 %build
 # I comandi di build rimangono identici
 pnpm install --frozen-lockfile
@@ -95,7 +100,6 @@ cp -r \
     addons \
     assets \
     bin \
-    bootloaders \
     conf \
     dracut \
     dist \
@@ -103,6 +107,10 @@ cp -r \
     node_modules \
     scripts \
     %{buildroot}%{nodejs_prefix}/
+
+# >> SOVRASCRIVI CON I BOOTLOADERS CORRETTI
+cp -r ../bootloaders %{buildroot}%{nodejs_prefix}/
+
 
 # Install executable symlink
 install -d -m 755 %{buildroot}%{_bindir}
@@ -148,5 +156,6 @@ install -m 644 assets/eggs.png %{buildroot}%{_datadir}/pixmaps/eggs.png
 %{_mandir}/man1/eggs.1.gz
 
 %changelog
+* Sun Aug 10 2025 Piero Proietti <piero.proietti@gmail.com> - 25.8.10-1
 * Sat Jul 19 2025 Piero Proietti <piero.proietti@gmail.com> - 25.7.14-0
 - Initial openSUSE package
