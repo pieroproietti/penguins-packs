@@ -1,1 +1,1 @@
-rm p* s* -rf 
+rm p* s* -rf *.tar.gz
