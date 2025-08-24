@@ -69,11 +69,6 @@ build() {
  pnpm install --prod --offline
 }
 
-prepare() {
- cd "$srcdir"
- tar -xzf bootloaders.tar.gz
-}
-
 package() {
  cd "$srcdir"/"$pkgname"
 
@@ -135,4 +130,4 @@ package() {
 
 # updpkgsums
 sha256sums=('db97528ab685ba50385947bc0078f9ba00511f50354c92f23eb9746e0be3070a'
-            'bf2bdbe4052cecca4f65e54656f68e9847da27112b0a13ee9f955f87f77c5e60')
+            'b5fd16c780c21c3976dd47f3bd97ef78073873017d8bf8a0a04c929df3db95a7')
