@@ -2,7 +2,7 @@
 #
 # mantainer: Muflone http://www.muflone.com/contacts/english/
 # contributor: Piero Proietti <piero.proietti_at_gmail.com>
-_commit=94439debd8de1a6d925030a94b8d9c0de9a774ad
+_commit=b4dfd37b4bf8cb7ff82f8ced09396b63d39890d5
 pkgname=penguins-eggs
 pkgver=25.8.24
 pkgrel=1
@@ -129,5 +129,5 @@ package() {
 }
 
 # updpkgsums
-sha256sums=('db97528ab685ba50385947bc0078f9ba00511f50354c92f23eb9746e0be3070a'
+sha256sums=('7fa49ff173c72875dbe132380889f0cfb9c9520a3e6172fcab33eb3d521f191c'
             'b5fd16c780c21c3976dd47f3bd97ef78073873017d8bf8a0a04c929df3db95a7')

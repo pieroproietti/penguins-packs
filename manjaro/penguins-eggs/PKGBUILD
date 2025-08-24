@@ -51,7 +51,7 @@ makedepends=(
 options=('!strip')
 source=(
   "git+https://github.com/pieroproietti/penguins-eggs.git#commit=$_commit"
-  "bootloaders.tar.gz::https://github.com/pieroproietti/penguins-eggs/releases/download/v25.8.10/bootloaders.tar.gz"
+  "bootloaders.tar.gz::https://github.com/pieroproietti/penguins-eggs/releases/download/v25.8.24/bootloaders.tar.gz"
 )
 
 pkgver() {
