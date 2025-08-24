@@ -24,7 +24,7 @@
 %define _gpg_name none
 
 Name:           %{app_name}
-Version:        25.8.10
+Version:        25.8.24
 Release:        1%{?dist}
 Summary:        A console tool to remaster your system and create live images
 # Manteniamo la disattivazione delle dipendenze automatiche a causa dei moduli nodejs inclusi (bundled)
