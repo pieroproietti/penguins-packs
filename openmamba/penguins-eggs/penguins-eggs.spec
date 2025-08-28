@@ -7,7 +7,7 @@ Vendor:        openmamba
 Distribution:  openmamba
 Packager:      Silvan Calarco <silvan.calarco@mambasoft.it>
 URL:           https://penguins-eggs.net/
-Source0:       https://github.com/pieroproietti/penguins-eggs/archive/v%{version}/%{app_name}-%{version}.tar.gz
+Source0:       https://github.com/pieroproietti/penguins-eggs/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1:       https://github.com/pieroproietti/penguins-eggs/releases/download/v%{version}/bootloaders.tar.gz
 License:       GPL
 ## AUTOBUILDREQ-BEGIN
