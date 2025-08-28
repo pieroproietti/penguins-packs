@@ -11,5 +11,7 @@ if [ "$EUID" -eq 0 ]; then
   echo "Please run as normal user"
   exit
 fi
-
-/usr/bin/rpmbuild -ba ./penguins-eggs.spec
+echo "Download sources..."
+spectool -g -R penguins-eggs.spec
+echo "Building package..."
+/usr/bin/rpmbuild -bb ./penguins-eggs.spec

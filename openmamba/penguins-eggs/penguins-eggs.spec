@@ -1,91 +1,145 @@
-Name:          penguins-eggs
-Version:       10.0.59
-Release:       1mamba
-Summary:       A console tool that allows you to remaster your system and redistribute it as live images on USB sticks or via PXE
-Group:         System/Tools
-Vendor:        openmamba
-Distribution:  openmamba
-Packager:      Piero Proietti <piero.proietti@gmail.com>
-URL:           https://penguins-eggs.net/
-Source:        https://github.com/pieroproietti/penguins-eggs.git/v%{version}/penguins-eggs-%{version}.tar.gz
-License:       GPL
-## AUTOBUILDREQ-BEGIN
-## AUTOBUILDREQ-END
-BuildRequires: nodejs pnpm
-Requires:   bash-completion cryptsetup curl device-mapper dmraid dosfstools dracut efibootmgr fuse git jq lvm2 nodejs nvme-cli parted rsync sshfs wget xdg-user-dirs xorriso zstd
+#
+# spec file for package penguins-eggs
+#
+# Copyright (c) 2025 Piero Proietti
+#
+# All modifications and additions to the file contributed by third parties
+# remain the property of their copyright owners, unless otherwise agreed
+# upon. The license for this file, and modifications and additions to the
+# file, is the same license as for the pristine package itself (unless the
+# license for the pristine package is not an Open Source License, in which
+# case the license is the MIT License). An "Open Source License" is a
+# license that conforms to the Open Source Definition (Version 1.9)
+# published by the Open Source Initiative.
+
+%global app_name penguins-eggs
+%global nodejs_prefix %{_prefix}/lib/%{app_name}
+
+# Non generare il pacchetto di debug, che causa problemi con i binari pre-compilati
+%global debug_package %{nil}
+
+
+
+Name:           %{app_name}
+Version:        25.8.28
+Release:        1%{?dist}
+Summary:        A console tool to remaster your system and create live images
+# rimuove scoperta dipendenze
+AutoReqProv: no
+
+License:        GPL-3.0-or-later
+URL:            https://penguins-eggs.net/
+Source0:        https://github.com/pieroproietti/penguins-eggs/archive/v%{version}/%{app_name}-%{version}.tar.gz
+Source1:        https://github.com/pieroproietti/penguins-eggs/releases/download/v%{version}/bootloaders.tar.gz
+
+# Openmamba uses system-provided nodejs libraries where possible.
+# We bundle them here as per nodejs packaging guidelines when they can't be unbundled.
+# See: https://docs.fedoraproject.org/en-US/packaging-guidelines/Node.js/
+Provides:       bundled(nodejs-module)
+
+BuildRequires:  gcc-c++
+BuildRequires:  make
+BuildRequires:  pnpm
+Requires:       bash-completion
+Requires:       cryptsetup
+Requires:       curl
+Requires:       device-mapper
+Requires:       dosfstools
+Requires:       dracut
+Requires:       dracut-live
+Requires:       efibootmgr
+Requires:       fuse
+Requires:       git
+Requires:       jq
+Requires:       lvm2
+Requires:       nodejs
+Requires:       nvme-cli
+Requires:       parted
+Requires:       rsync
+Requires:       sshfs
+Requires:       wget
+Requires:       xdg-utils
+Requires:       xorriso
+Requires:       zstd
 
 %description
 A console tool that allows you to remaster your system and redistribute it as live images on USB sticks or via PXE.
 
-#% debug_package
-%global debug_package %{nil}  # no debug package
-
 %prep
-%setup -q
+%setup -q -n %{app_name}-%{version}
+
+# Ora estraiamo Source1 nella directory di build principale
+tar -xzf %{SOURCE1} -C ../
 
 %build
-# Based on Arch Linux pkgbuild
-pnpm install
-pnpm build  
+pnpm install --frozen-lockfile
+pnpm build
 
 %install
-[ "%{buildroot}" != / ] && rm -rf "%{buildroot}"
+# Install main application files
+install -d -m 755 %{buildroot}%{nodejs_prefix}
+install -m 644 .oclif.manifest.json package.json -t %{buildroot}%{nodejs_prefix}
 
-install -Dm644 .oclif.manifest.json package.json -t %{buildroot}%{_prefix}/lib/%{name}
+# Copy necessary directories
 cp -r \
-   addons \
-   assets \
-   bin \
-   bootloaders \
-   conf \
-   dracut \
-   dist \
-   eui \
-   node_modules \
-   scripts \
-   %{buildroot}%{_prefix}/lib/%{name}
+    addons \
+    assets \
+    bin \
+    conf \
+    dracut \
+    dist \
+    eui \
+    node_modules \
+    scripts \
+    %{buildroot}%{nodejs_prefix}/
 
-# Install bash-completion files
-install -d %{buildroot}%{_datadir}/bash-completion/completions
-ln -s /usr/lib/%{name}/scripts/eggs.bash \
-   %{buildroot}%{_datadir}/bash-completion/completions/
+# La cartella si trova in ../bootloaders rispetto alla directory corrente
+cp -r ../bootloaders %{buildroot}%{nodejs_prefix}/
 
-# Install zsh-completion files
-install -d %{buildroot}%{_datadir}/zsh/functions/Completion/Zsh/
-ln -s ../lib/%{name}/scripts/_eggs \
-   %{buildroot}%{_datadir}/zsh/functions/Completion/Zsh/
+# Install executable symlink
+install -d -m 755 %{buildroot}%{_bindir}
+ln -s %{nodejs_prefix}/bin/run.js %{buildroot}%{_bindir}/eggs
+
+# Install shell completions
+install -d -m 755 %{buildroot}%{_datadir}/bash-completion/completions
+ln -s %{nodejs_prefix}/scripts/eggs.bash %{buildroot}%{_datadir}/bash-completion/completions/eggs
+
+install -d -m 755 %{buildroot}%{_datadir}/zsh/site-functions
+ln -s %{nodejs_prefix}/scripts/_eggs %{buildroot}%{_datadir}/zsh/site-functions/_eggs
 
 # Install man page
-install -D -m0644 manpages/doc/man/eggs.1.gz -t %{buildroot}%{_mandir}/man1/
+install -d -m 755 %{buildroot}%{_mandir}/man1
+install -m 644 manpages/doc/man/eggs.1.gz %{buildroot}%{_mandir}/man1/eggs.1.gz
 
-# Install desktop file
-install -D -m0644 assets/%{name}.desktop -t %{buildroot}%{_datadir}/applications/
-
-# Install icon
-install -D -m0644 assets/eggs.png -t %{buildroot}%{_datadir}/pixmaps/
-
-# Symlink executable
-install -d %{buildroot}%{_bindir}
-ln -s ../lib/%{name}/bin/run.js %{buildroot}%{_bindir}/eggs
-
-%clean
-[ "%{buildroot}" != / ] && rm -rf "%{buildroot}"
+# Install desktop file and icon
+install -d -m 755 %{buildroot}%{_datadir}/applications
+install -m 644 assets/%{app_name}.desktop %{buildroot}%{_datadir}/applications/%{app_name}.desktop
+install -d -m 755 %{buildroot}%{_datadir}/pixmaps
+install -m 644 assets/eggs.png %{buildroot}%{_datadir}/pixmaps/eggs.png
 
 %files
-%defattr(-,root,root)
-%{_bindir}/eggs
-%{_datadir}/applications/penguins-eggs.desktop
-%dir %{_prefix}/lib/penguins-eggs
-%{_prefix}/lib/penguins-eggs/.oclif.manifest.json
-%{_prefix}/lib/penguins-eggs/*
-%{_datadir}/bash-completion/completions/eggs.bash
-%{_datadir}/zsh/functions/Completion/Zsh/_eggs
-%{_datadir}/pixmaps/eggs.png
-%{_mandir}/man1/eggs.1*
+#%license LICENSE
 %doc README.md
+%{_bindir}/eggs
+%dir %{nodejs_prefix}
+%{nodejs_prefix}/.oclif.manifest.json
+%{nodejs_prefix}/package.json
+%{nodejs_prefix}/addons/
+%{nodejs_prefix}/assets/
+%{nodejs_prefix}/bin/
+%{nodejs_prefix}/bootloaders/
+%{nodejs_prefix}/conf/
+%{nodejs_prefix}/dist/
+%{nodejs_prefix}/dracut/
+%{nodejs_prefix}/eui/
+%{nodejs_prefix}/node_modules/
+%{nodejs_prefix}/scripts/
+%{_datadir}/applications/%{app_name}.desktop
+%{_datadir}/bash-completion/completions/eggs
+%{_datadir}/zsh/site-functions/_eggs
+%{_datadir}/pixmaps/eggs.png
+%{_mandir}/man1/eggs.1.gz
 
-%%changelog
-* Sat Dec 28 2024 Piero Proietti <piero.proietti@gmail.com> - 10.0.57-1mamba
-* Wed Dec 18 2024 Piero Proietti <piero.proietti@gmail.com> - 10.0.56-1mamba
-* Fri Dec 13 2024 Piero Proietti <piero.proietti@gmail.com> - 10.0.55-1mamba
-* Sun Dec 01 2024 Silvan Calarco, Piero Proietti <piero.proietti@gmail.com> - 10.0.54-1mamba
+%changelog
+* Sat Jul 19 2025 Tuo Nome <tua@email.com> - 10.0.59-1
+- Initial Fedora package
