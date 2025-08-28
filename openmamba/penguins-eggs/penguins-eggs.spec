@@ -7,7 +7,7 @@ Vendor:        openmamba
 Distribution:  openmamba
 Packager:      Silvan Calarco <silvan.calarco@mambasoft.it>
 URL:           https://penguins-eggs.net/
-Source:        https://github.com/pieroproietti/penguins-eggs/archive/refs/tags/v%{version}.tar.gz
+Source0:       https://github.com/pieroproietti/penguins-eggs/archive/v%{version}/%{app_name}-%{version}.tar.gz
 Source1:       https://github.com/pieroproietti/penguins-eggs/releases/download/v%{version}/bootloaders.tar.gz
 License:       GPL
 ## AUTOBUILDREQ-BEGIN
@@ -43,18 +43,6 @@ A console tool that allows you to remaster your system and redistribute it as li
 %global __requires_exclude ^libc.so\\(\\)\\(64bit\\)$
 
 %prep
-# --- Inizio Modifica ---
-
-# 1. Scarichiamo Source0 (il sorgente principale) con wget, rinominandolo nel formato standard
-#    che %setup si aspetta. %{SOURCE0} è la macro che contiene l'URL di Source0.
-wget -O %{name}-%{version}.tar.gz %{SOURCE0}
-
-# 2. Scarichiamo anche Source1 (bootloaders.tar.gz)
-wget %{SOURCE1}
-
-# 3. Ora che i file sono presenti localmente, la macro %setup standard funzionerà.
-#    Troverà penguins-eggs-25.8.28.tar.gz e bootloaders.tar.gz nella directory di build.
-
 %setup -q -a1
 
 %build

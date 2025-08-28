@@ -29,6 +29,8 @@ AutoReqProv: no
 
 License:        GPL-3.0-or-later
 URL:            https://penguins-eggs.net/
+#Source0:        https://github.com/pieroproietti/penguins-eggs/archive/v%{version}/%{app_name}-%{version}.tar.gz
+#Source1:        https://github.com/pieroproietti/penguins-eggs/releases/download/v%{version}/bootloaders.tar.gz
 Source0:        https://github.com/pieroproietti/penguins-eggs/archive/v%{version}/%{app_name}-%{version}.tar.gz
 Source1:        https://github.com/pieroproietti/penguins-eggs/releases/download/v%{version}/bootloaders.tar.gz
 
