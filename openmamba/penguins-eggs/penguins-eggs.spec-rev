@@ -1,3 +1,5 @@
+%global commit_hash 0c699835cb516fde47a7c798d29097bfede389c2
+
 Name:          penguins-eggs
 Version:       25.8.28
 Release:       1mamba
@@ -7,7 +9,8 @@ Vendor:        openmamba
 Distribution:  openmamba
 Packager:      Silvan Calarco <silvan.calarco@mambasoft.it>
 URL:           https://penguins-eggs.net/
-Source:        https://github.com/pieroproietti/penguins-eggs.git/v%{version}/penguins-eggs-%{version}.tar.bz2
+#Source:        https://github.com/pieroproietti/penguins-eggs.git/v%{version}/penguins-eggs-%{version}.tar.bz2
+Source0:       https://github.com/pieroproietti/penguins-eggs/archive/%{commit_hash}/%{name}-%{version}.tar.gz
 Source1:       https://github.com/pieroproietti/penguins-eggs/releases/download/v%{version}/bootloaders.tar.gz
 License:       GPL
 ## AUTOBUILDREQ-BEGIN
@@ -43,7 +46,10 @@ A console tool that allows you to remaster your system and redistribute it as li
 %global __requires_exclude ^libc.so\\(\\)\\(64bit\\)$
 
 %prep
-%setup -q -a1
+# La macro %setup si aspetta di trovare un tarball con un nome specifico,
+# qui lo adattiamo al formato generato da GitHub (che include l'hash del commit).
+%setup -q -n %{name}-%{commit_hash}
+# %setup -q -a1
 
 %build
 pnpm install
