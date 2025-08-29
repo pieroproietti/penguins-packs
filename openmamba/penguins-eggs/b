@@ -11,6 +11,11 @@ if [ "$EUID" -eq 0 ]; then
   echo "Please run as normal user"
   exit
 fi
+
 clear
+echo "_topdir: " $(rpm --eval '%_topdir')
+echo "__sourcedir: " $(rpm --eval '%_sourcedir')
+echo "_download_cmd: " $(rpm --eval '%_download_cmd')
+echo ""
 rpmbuild -bs ./penguins-eggs.spec
-#rpmbuild  -bb ./penguins-eggs.spec
+rpmbuild  -bb ./penguins-eggs.spec

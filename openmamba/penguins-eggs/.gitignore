@@ -1,0 +1,11 @@
+# Ignore everything in penguins-eggs
+*
+
+# But not these files...
+!.gitignore
+!penguins-eggs.spec
+!README.md
+!b
+!c
+!d
+
