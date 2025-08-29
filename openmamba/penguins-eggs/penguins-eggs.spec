@@ -1,8 +1,8 @@
-Patch0:       0001-ariprova.patch
-Patch1:       0002-openmamba-fix-initramfs.patch
+# Patch1: 0001-ariprova.patch
+# Patch2: 0002-openmamba-fix-initramfs.patch
 
 Name:          penguins-eggs
-Version:       25.8.28
+Version:       25.8.29
 Release:       1mamba
 Summary:       A console tool that allows you to remaster your system and redistribute it as live images on USB sticks or via PXE
 Group:         System/Tools
@@ -47,8 +47,8 @@ A console tool that allows you to remaster your system and redistribute it as li
 
 %prep
 %setup -q -a1
-%patch 0 -p1
-%patch 1 -p1
+# %patch 1 -p1
+# %patch 2 -p1
 
 %build
 pnpm install

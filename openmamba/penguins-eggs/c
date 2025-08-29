@@ -1,2 +1,2 @@
 echo "clean..."
-rm /usr/src/RPM/SOURCES/*
+rm ~//rpmbuild/SOURCES/*
