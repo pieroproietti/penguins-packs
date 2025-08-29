@@ -18,7 +18,7 @@ BuildRequires: glibc-devel
 BuildRequires: libgcc
 ## AUTOBUILDREQ-END
 BuildRequires: pnpm
-Requires:      calamares
+# Requires:      calamares
 Requires:      dosfstools
 Requires:      dracut
 Requires:      findutils
