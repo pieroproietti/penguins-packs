@@ -1,4 +1,11 @@
+
 mkdir naked
 cd naked
-tar -xf ../openmamba-rootfs-base-en-snapshot-20250815.x86_64.tar.xz
+sudo tar -xf ../openmamba-rootfs-base-en-snapshot-20250815.x86_64.tar.xz
+sudo cp -r /boot ~/naked/boot 
+sudo ln -s usr/bin bin
+sudo ln -s usr/sbin sbin
+sudo ln -s usr/lib lib
+sudo ln -s usr/lib/modules lib/modules
+sudo ln -s usr/lib64 lib64
 

@@ -1,19 +1,14 @@
 #!/bin/bash
-
-# Assicurati che le directory di destinazione esistano
-mkdir -p ~/naked/{dev/pts,proc,run,sys}
+# mkdir -p ~/naked/{dev/pts,proc,run,sys}
 
 # Esegui i comandi di mount
-# Ti chiederà la password una sola volta all'inizio
+
 sudo mount --bind /dev ~/naked/dev
 sudo mount --bind /dev/pts ~/naked/dev/pts 
 sudo mount --bind /proc ~/naked/proc
 sudo mount --bind /run ~/naked/run
 sudo mount --bind /sys ~/naked/sys
 
-# Entra nell'ambiente chroot
+echo "sudo umount -R $HOME/naked"
 sudo chroot ~/naked
 
-echo "NOTA: Quando uscirai dal chroot, dovrai smontare queste directory."
-echo "Esempio comando per smontare tutto (da eseguire dopo essere usciti dal chroot):"
-echo "sudo umount -R ~/naked"
