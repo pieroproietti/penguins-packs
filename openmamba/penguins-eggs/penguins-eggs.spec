@@ -1,3 +1,6 @@
+Patch0:       0001-fix-un-bug.patch
+Patch1:       0002-aggiungi-una-funzione.patch
+
 Name:          penguins-eggs
 Version:       25.8.28
 Release:       1mamba
@@ -44,6 +47,8 @@ A console tool that allows you to remaster your system and redistribute it as li
 
 %prep
 %setup -q -a1
+%patch 0 -p1
+%patch 1 -p1
 
 %build
 pnpm install

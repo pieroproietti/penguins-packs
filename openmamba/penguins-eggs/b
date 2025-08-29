@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "build..."
+clear
 
 # check if we are on openmamba
 if [ ! -f /etc/openmamba-release ]; then
@@ -14,10 +14,4 @@ if [ "$EUID" -eq 0 ]; then
   exit
 fi
 
-clear
-echo "_topdir: " $(rpm --eval '%_topdir')
-echo "__sourcedir: " $(rpm --eval '%_sourcedir')
-echo "_download_cmd: " $(rpm --eval '%_download_cmd')
-echo ""
-rpmbuild -bs ./penguins-eggs.spec
-rpmbuild  -bb ./penguins-eggs.spec
+sudo rpmbuild  -bb ./penguins-eggs.spec
