@@ -1,0 +1,5 @@
+sudo umount /home/artisan/naked/dev/pts
+sudo umount /home/artisan/naked/dev
+sudo umount /home/artisan/naked/proc
+sudo umount /home/artisan/naked/run
+sudo umount /home/artisan/naked/sys

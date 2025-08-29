@@ -1,0 +1,4 @@
+mkdir naked
+cd naked
+tar -xf ../openmamba-rootfs-base-en-snapshot-20250815.x86_64.tar.xz
+
