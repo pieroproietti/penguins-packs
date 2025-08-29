@@ -1,5 +1,5 @@
-Patch0:       0001-fix-un-bug.patch
-Patch1:       0002-aggiungi-una-funzione.patch
+Patch0:       0001-ariprova.patch
+Patch1:       0002-openmamba-fix-initramfs.patch
 
 Name:          penguins-eggs
 Version:       25.8.28

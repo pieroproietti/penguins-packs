@@ -1,11 +1,13 @@
 #!/bin/bash
 
 clear
-echo Download
+echo add patch
 
 version="25.8.28"
 name="penguins-eggs"
-RPM_SOURCES_DIR="/usr/src/RPM/SOURCES"
+RPM_SOURCES_DIR="$HOME/rpmbuild/SOURCES"
+cp ~/penguins-eggs/*.patch $RPM_SOURCES_DIR
+exit
 
 Source0="https://github.com/pieroproietti/penguins-eggs/archive/refs/tags/v$version.tar.gz"
 Dest0="$name-$version.tar.gz"
