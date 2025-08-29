@@ -1,2 +1,2 @@
-ls /usr/src/RPM/SOURCES/
-rm /usr/src/RPM/SOURCES/penguins-eggs*
+echo "clean..."
+rm /usr/src/RPM/SOURCES/*

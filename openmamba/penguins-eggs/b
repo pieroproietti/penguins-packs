@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "build..."
+
 # check if we are on openmamba
 if [ ! -f /etc/openmamba-release ]; then
     echo "This script is only for openmamba"

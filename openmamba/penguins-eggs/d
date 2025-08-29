@@ -1,6 +1,8 @@
 #!/bin/bash
 
 clear
+echo Download
+
 version="25.8.28"
 name="penguins-eggs"
 RPM_SOURCES_DIR="/usr/src/RPM/SOURCES"
