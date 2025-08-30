@@ -2,10 +2,8 @@
 mkdir naked
 cd naked
 sudo tar -xf ../openmamba-rootfs-base-en-snapshot-20250815.x86_64.tar.xz
-sudo cp -r /boot/* ~/naked/boot 
-sudo ln -s ./usr/bin            ./bin
-sudo ln -s ./usr/sbin           ./sbin
-sudo ln -s ./usr/lib            ./lib
-sudo ln -s ./usr/lib/modules    ./lib/modules
-sudo ln -s ./usr/lib64          ./lib64
+# dnf install kernel
+# depmod -a 6.12.37-1mamba-x86_64
+# dracut --force /boot/initramfs-6.12.37-1mamba-x86_64.img 6.12.37-1mamba-x86_64
+
 

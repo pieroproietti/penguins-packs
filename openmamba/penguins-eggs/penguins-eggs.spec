@@ -1,16 +1,22 @@
 # Patch1: 0001-ariprova.patch
 # Patch2: 0002-openmamba-fix-initramfs.patch
 
+%define commit 3b7429094d05ee20246b5edb4afb17e7dac19f42
+%define shortcommit %(echo %{commit} | cut -c1-7)
+
 Name:          penguins-eggs
 Version:       25.8.29
-Release:       1mamba
+Release:       1mamba 
 Summary:       A console tool that allows you to remaster your system and redistribute it as live images on USB sticks or via PXE
 Group:         System/Tools
 Vendor:        openmamba
 Distribution:  openmamba
 Packager:      Silvan Calarco <silvan.calarco@mambasoft.it>
 URL:           https://penguins-eggs.net/
-Source:        https://github.com/pieroproietti/penguins-eggs/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+# commit
+Source:        https://github.com/pieroproietti/penguins-eggs/archive/%{commit}.tar.gz#/%{name}-%{commit}.tar.gz
+# version
+#Source:        https://github.com/pieroproietti/penguins-eggs/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1:       https://github.com/pieroproietti/penguins-eggs/releases/download/v%{version}/bootloaders.tar.gz
 License:       GPL
 ## AUTOBUILDREQ-BEGIN
@@ -47,8 +53,6 @@ A console tool that allows you to remaster your system and redistribute it as li
 
 %prep
 %setup -q -a1
-# %patch 1 -p1
-# %patch 2 -p1
 
 %build
 pnpm install
