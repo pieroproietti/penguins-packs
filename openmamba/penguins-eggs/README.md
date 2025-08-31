@@ -1,7 +1,7 @@
 # penguins-eggs
 
 ```
-sudo dnf install rpm-build gcc-c++ pnpm
+sudo dnf install rpm-build gcc-c++ pnpm  elfutils
 ```
 
 il percorso è /usr/src/RPM
@@ -26,3 +26,4 @@ git format-patch -2 HEAD
 
 # applicare patch
 cp 0* .
+
