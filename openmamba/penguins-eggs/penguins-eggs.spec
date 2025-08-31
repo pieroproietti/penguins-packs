@@ -5,7 +5,7 @@
 %define shortcommit %(echo %{commit} | cut -c1-7)
 
 Name:          penguins-eggs
-Version:       25.8.29
+Version:       25.8.31
 Release:       1mamba 
 Summary:       A console tool that allows you to remaster your system and redistribute it as live images on USB sticks or via PXE
 Group:         System/Tools
@@ -13,10 +13,7 @@ Vendor:        openmamba
 Distribution:  openmamba
 Packager:      Silvan Calarco <silvan.calarco@mambasoft.it>
 URL:           https://penguins-eggs.net/
-# commit
-Source:        https://github.com/pieroproietti/penguins-eggs/archive/%{commit}.tar.gz#/%{name}-%{commit}.tar.gz
-# version
-#Source:        https://github.com/pieroproietti/penguins-eggs/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source:        https://github.com/pieroproietti/penguins-eggs/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 Source1:       https://github.com/pieroproietti/penguins-eggs/releases/download/v%{version}/bootloaders.tar.gz
 License:       GPL
 ## AUTOBUILDREQ-BEGIN

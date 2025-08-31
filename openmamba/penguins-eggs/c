@@ -1,2 +1,3 @@
 echo "clean..."
-rm ~//rpmbuild/SOURCES/*
+rm ~/rpmbuild/SOURCES/*
+rm ~/rpmbuild/SRPMS/*
