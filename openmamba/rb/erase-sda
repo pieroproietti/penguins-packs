@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# WARNING: This script will completely erase all data on /dev/sda.
+# Run it with extreme caution and ensure you have selected the correct disk.
+# It must be run with root privileges (e.g., using sudo).
+
+set -e # Exit immediately if a command exits with a non-zero status.
+set -u # Treat unset variables as an error.
+
+DISK="/dev/sda"
+
+echo "### WARNING: All data on ${DISK} will be permanently destroyed. ###"
+read -p "Are you absolutely sure you want to continue? (yes/no): " CONFIRMATION
+
+if [ "$CONFIRMATION" != "yes" ]; then
+    echo "Operation cancelled."
+    exit 1
+fi
+
+echo "--- Starting the process on ${DISK} ---"
+
+# 1. Delete all existing partitions
+echo "Step 1: Deleting all partitions on ${DISK}..."
+#wipefs -a ${DISK}
+#dd if=/dev/zero of=${DISK} bs=1M count=100
+
+# 2. Create a new partition table (GPT) and one new partition spanning the entire disk
+echo "Step 2: Creating a new GPT partition table and a single partition..."
+parted -s ${DISK} mklabel gpt
+parted -s -a optimal ${DISK} mkpart primary ext4 0% 100%
+
+# Let the system know about the new partition table
+partprobe ${DISK}
+sleep 2 # Give the kernel a moment to recognize the new partition
+
+# 3. Format the new partition as ext4
+echo "Step 3: Formatting the new partition (${DISK}1) as ext4..."
+mkfs.ext4 -F "${DISK}1"
+
+echo "--- Process completed successfully! ---"
+echo "${DISK} has been re-partitioned and formatted."
