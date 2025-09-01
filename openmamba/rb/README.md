@@ -14,12 +14,18 @@ Sia gli script che il README. sono in divenire.
 
 ## kernel
 ```
-dnf install kernel
+dnf install kernel e2fsprogs
 ```
 
-## e2fsprocs
+## Tools
 ```
-dnf install e2fsprogs
+dnf install  nano
+```
+
+## fstab
+Edit `/etc/fstab` aggiungendo 
+```
+/dev/sda1    /    exts    defaults    0  2
 ```
 
 ## grub-install
