@@ -4,16 +4,13 @@ This repository started as `penguins-eggs-pkgbuilds` and included package creati
 
 There is no need to use this repository for the creation of DEB packages, which is done directly from penguins-eggs sources, using the command: `pnpm deb`
 
-## ALDOS (tarballs)
-* `cd tarballs`
-* `./setup /path/to/penguins-eggs-tarball-10.0.54-1-linux-x64.tar.gz`
+## AlmaLinux/RockyLinux (RPM)
+* `cd el9/penguins-eggs`
+* `./c|./b`
 
-## AlmaLinux/RockyLinux (tarballs)
-* `cd tarballs`
-* `./setup /path/to/penguins-eggs-tarball-10.0.54-1-linux-x64.tar.gz`
+## Alpine Linux (APK)
+* See: [penguins-alpine](https://github.com/pieroproietti/penguins-alpine).
 
-## Alpine Linux (apk)
-* `cd alpine`
 
 ## ArchLinux (PKGBUILD)
 * `cd aur/penguins/eggs`
@@ -27,17 +24,16 @@ There is no need to use this repository for the creation of DEB packages, which 
 [Publish package to AUR](./PUBLISH.md), link to 
 [penguins-eggs on AUR](https://aur.archlinux.org/packages/penguins-eggs)
 
-## Fedora  (tarballs)
-* `cd tarballs`
-* `./setup /path/to/penguins-eggs-tarball-10.0.54-1-linux-x64.tar.gz`
+## Fedora  (RPM)
+* `cd fedora/penguins-eggs`
+* `./c|./b`
 
 ## Manjaro (PKGBUILD)
-* `cd manjaro/penguins/eggs`
+* `cd manjaro/penguins-eggs`
 * `./m`
 
 [penguins-eggs on Manjaro community](https://gitlab.manjaro.org/packages/community/penguins-eggs)
 
 ## Openmamba (RPM)
 * `cd openmamba/penguins-eggs`
-* `./get-sources`
-* `./build-rpm`
+* `./c|./d|./b`
