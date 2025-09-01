@@ -45,7 +45,7 @@ dnf install kernel e2fsprogs
 
 ## Qualche comodità minina... a scelta
 ```
-dnf install  nano
+dnf install  nano tzdata
 ```
 
 ## fstab
