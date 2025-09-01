@@ -2,6 +2,8 @@
 
 # Script to create a naked rootfs for OpenMamba
 # Usage: ./mknaked.sh
+wget https://cdn.openmamba.org/pub/openmamba/media/rolling/rootfs/it/openmamba-rootfs-it-snapshot-20250823.x86_64.tar.xz
+
 NAKED_HOME='/home/live/naked'
 mkdir "$NAKED_HOME"
 mount /dev/sda1 "$NAKED_HOME"
