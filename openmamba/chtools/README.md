@@ -8,8 +8,6 @@ D'altra parte è il modo più pratico che ho trovato per ottenere una openmamba 
 
 Quindi, partiamo scaricando **openmamba-rootfs-base-en-snapshot-20250815.x86_64.tar.xz** dal sito di [opemamba](https://openmamba.org/it/Scarica/).
 
-Questo sto facendo, ormai sono a buon punto, anche se ho pr
-
 # Cosa manca a rootfs?
 Per installare rootfs utilizzeremo una live, la prima volta ho usato la live openmamba-lxqt, successivamente le varie naked prodotte.
 
