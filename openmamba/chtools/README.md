@@ -6,7 +6,7 @@ Eemastersys, systemback ed anche penguins-eggs fanno un percorso del tutto oppos
 
 D'altra parte è il modo più pratico che ho trovato per ottenere una openmamba "naked" e, mi è stato suggerito direttamente dall'autore.
 
-Quindi, partiamo scaricando ][openmamba-rootfs-base-en-snapshot-20250815.x86_64.tar.xz]().
+Quindi, partiamo scaricando **openmamba-rootfs-base-en-snapshot-20250815.x86_64.tar.xz** dal sito di [opemamba](https://openmamba.org/it/Scarica/).
 
 Questo sto facendo, ormai sono a buon punto, anche se ho pr
 
