@@ -1,1 +1,1 @@
-cp ~/rpmbuild/RPMS/x86_64/penguins-eggs-25.*-1mamba.x86_64.rpm ~/naked/home/artisan
+scp 192.168.1.2:/eggs/openmamba/penguins-eggs-25.*-1mamba.x86_64.rpm ~/naked/home/artisan
