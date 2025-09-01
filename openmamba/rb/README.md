@@ -19,7 +19,12 @@ dnf install kernel
 
 ## e2fsprocs
 ```
-dnf install e2fstools
-
+dnf install e2fsprogs
 ```
+
+## grub-install
+```
+sudo grub-install --target=i386-pc /dev/sda
+```
+
 

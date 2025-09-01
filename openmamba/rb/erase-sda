@@ -1,41 +1,54 @@
 #!/bin/bash
 
-# WARNING: This script will completely erase all data on /dev/sda.
-# Run it with extreme caution and ensure you have selected the correct disk.
-# It must be run with root privileges (e.g., using sudo).
+# =================================================================================
+# AVVISO: Questo script cancellerà completamente tutti i dati su /dev/sda.
+# Eseguilo con estrema cautela e solo dopo aver verificato il nome del disco.
+# Deve essere eseguito con privilegi di root (ad esempio, usando sudo).
+# =================================================================================
 
-set -e # Exit immediately if a command exits with a non-zero status.
-set -u # Treat unset variables as an error.
+set -e # Esce immediatamente se un comando fallisce.
+set -u # Tratta le variabili non impostate come un errore.
 
+# --- CONFIGURAZIONE ---
+# Assicurati che questo sia il disco corretto!
 DISK="/dev/sda"
+# --------------------
 
-echo "### WARNING: All data on ${DISK} will be permanently destroyed. ###"
-read -p "Are you absolutely sure you want to continue? (yes/no): " CONFIRMATION
+echo "### ATTENZIONE: Tutti i dati su ${DISK} saranno distrutti permanentemente. ###"
+echo "Questo script configurerà il disco con una tabella MBR per un sistema BIOS."
+read -p "Sei assolutamente sicuro di voler continuare? (scrivi 'yes'): " CONFIRMATION
 
 if [ "$CONFIRMATION" != "yes" ]; then
-    echo "Operation cancelled."
+    echo "Operazione annullata."
     exit 1
 fi
 
-echo "--- Starting the process on ${DISK} ---"
+echo "--- Avvio del processo su ${DISK} ---"
 
-# 1. Delete all existing partitions
-echo "Step 1: Deleting all partitions on ${DISK}..."
-#wipefs -a ${DISK}
-#dd if=/dev/zero of=${DISK} bs=1M count=100
+# 1. Cancellazione di tutte le partizioni e firme esistenti
+#    Questo assicura che il disco sia completamente pulito prima di iniziare.
+echo "Passo 1: Pulizia completa del disco ${DISK}..."
+wipefs -a ${DISK}
+#dd if=/dev/zero of=${DISK} bs=1M count=10 status=progress
 
-# 2. Create a new partition table (GPT) and one new partition spanning the entire disk
-echo "Step 2: Creating a new GPT partition table and a single partition..."
-parted -s ${DISK} mklabel gpt
-parted -s -a optimal ${DISK} mkpart primary ext4 0% 100%
+# 2. Creazione di una nuova tabella delle partizioni MBR (msdos)
+#    Questa è la tabella corretta per un sistema BIOS tradizionale.
+echo "Passo 2: Creazione di una nuova tabella delle partizioni MBR (msdos)..."
+parted -s ${DISK} mklabel msdos
 
-# Let the system know about the new partition table
+# 3. Creazione della partizione principale
+#    Si inizia a 1MiB per lasciare lo spazio necessario per il bootloader GRUB
+#    nello spazio tra l'MBR e l'inizio della prima partizione.
+echo "Passo 3: Creazione di una partizione primaria che lascia spazio per GRUB..."
+parted -s -a optimal ${DISK} mkpart primary ext4 1MiB 100%
+
+# Informa il kernel delle avvenute modifiche alla tabella delle partizioni
 partprobe ${DISK}
-sleep 2 # Give the kernel a moment to recognize the new partition
+sleep 2 # Dà al sistema un momento per recepire le modifiche
 
-# 3. Format the new partition as ext4
-echo "Step 3: Formatting the new partition (${DISK}1) as ext4..."
+# 4. Formattazione della nuova partizione (es. /dev/sda1) in ext4
+echo "Passo 4: Formattazione della nuova partizione (${DISK}1) in ext4..."
 mkfs.ext4 -F "${DISK}1"
 
-echo "--- Process completed successfully! ---"
-echo "${DISK} has been re-partitioned and formatted."
+echo "--- ✅ Processo completato con successo! ---"
+echo "${DISK} è stato partizionato e formattato per un sistema BIOS con GRUB."
