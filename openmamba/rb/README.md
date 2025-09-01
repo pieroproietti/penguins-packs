@@ -1,4 +1,4 @@
-# Rooted tools
+# Root Base fs
 
 Questa per me è una nuova avventura, spero rapida.
 
@@ -10,12 +10,11 @@ Questo sto facendo, ormai sono a buon punto, anche se ho provato a percorrere di
 
 Sia gli script che il README. sono in divenire.
 
-# Che manca in rootfs
+# Cosa manca a rootfs?
 
 ## kernel
 ```
 dnf install kernel
-
 ```
 
 ## e2fsprocs
