@@ -2,7 +2,7 @@
 
 Questa per me è una nuova avventura, spero rapida.
 
-Eemastersys, systemback ed anche penguins-eggs fanno un percorso del tutto opposto, ma storicamente è stato ed è comune partire da un sistema di base e configurarlo chrooted.
+Remastersys, systemback ed anche penguins-eggs fanno un percorso del tutto opposto - e più semplice - ma storicamente __è nato prima l'uovo e poi la gallina__ ed è stato ed è comune e necessario partire da un rootfs di base e configurarlo chrooted.
 
 D'altra parte è il modo più pratico che ho trovato per ottenere una openmamba "naked" e, mi è stato suggerito direttamente dall'autore.
 
