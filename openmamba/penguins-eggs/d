@@ -3,7 +3,7 @@
 clear
 echo downlad
 
-version="25.8.31"
+version="25.9.1"
 name="penguins-eggs"
 RPM_SOURCES_DIR="$HOME/rpmbuild/SOURCES"
 cp ~/penguins-eggs/*.patch $RPM_SOURCES_DIR
