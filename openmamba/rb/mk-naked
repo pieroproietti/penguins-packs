@@ -8,7 +8,7 @@ NAKED_HOME='/home/live/naked'
 mkdir "$NAKED_HOME"
 mount /dev/sda1 "$NAKED_HOME"
 cd "$NAKED_HOME"
-sudo tar -xf ../openmamba-rootfs-base-en-snapshot-20250815.x86_64.tar.xz
+sudo tar -xf ../openmamba-rootfs-it-snapshot-20250823.x86_64.tar.xz
 
 # dnf install kernel
 # depmod -a 6.12.37-1mamba-x86_64
