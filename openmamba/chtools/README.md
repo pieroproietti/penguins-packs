@@ -13,7 +13,7 @@ Questo sto facendo, ormai sono a buon punto, anche se ho pr
 # Cosa manca a rootfs?
 Per installare rootfs utilizzeremo una live, la prima volta ho usato la live openmamba-lxqt, successivamente le varie naked prodotte.
 
-In primo luogo, questo è un lavoro fatto su una VM, fregandosene di quello che c'era dentro - in effetti è stata/sono state create appositamnte - farlo su un PC, specie con i dati non è cosa.
+In primo luogo, questo è un lavoro fatto su una VM, fregandosene di quello che c'era dentro - in effetti è stata/sono state create appositamnte - farlo direttamente su un PC - non è cosa ne' buone , ne' giusta, ed in ogni caso NON seguite questa procedura.
 
 Avviata la live, ci troveremo loggati come utente: live/evolution con diritti di root - il nostro utente fa parte del gruppo sysadmin.
 
