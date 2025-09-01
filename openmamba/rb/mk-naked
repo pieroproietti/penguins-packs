@@ -2,11 +2,12 @@
 
 # Script to create a naked rootfs for OpenMamba
 # Usage: ./mknaked.sh
+HOME=$(sudoers)
 
 wget https://cdn.openmamba.org/pub/openmamba/media/rolling/rootfs/it/openmamba-rootfs-it-snapshot-20250823.x86_64.tar.xz
-sudo mkdir naked
-sudo mount /dev/sda1 naked
-cd naked
+sudo mkdir "$SUDO_HOME/naked"
+sudo mount /dev/sda1 "$SUDO_HOME/naked"
+cd "$SUDO_HOME/naked"
 sudo tar -xf ../openmamba-rootfs-base-en-snapshot-20250815.x86_64.tar.xz
 # dnf install kernel
 # depmod -a 6.12.37-1mamba-x86_64
