@@ -1,11 +1,12 @@
-mkdir /home/artisan
+#!/bin/bash
+
+# Aggiunge l'utente artisan con password evolution
 useradd artisan --home-dir /home/artisan --shell /bin/bash 
 echo artisan:evolution | /usr/sbin/chpasswd
 echo root:evolution | /usr/sbin/chpasswd
-cp /etc/skel/. /home/live -R
+cp /etc/skel/. /home/artisan -R
 chown artisan:users /home/artisan -R
 usermod -aG sysadmin artisan > /dev/null 2>&1
-usermod -aG autologin artisan > /dev/null 2>&1
 usermod -aG users artisan > /dev/null 2>&1
 usermod -aG lp artisan > /dev/null 2>&1
 usermod -aG video artisan > /dev/null 2>&1
