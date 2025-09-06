@@ -1,0 +1,26 @@
+#!/bin/bash
+
+clear
+echo downlad
+name=libgdk-pixbuf
+Epoch:         1
+version="2.40.2"
+majversion="2.40"
+
+RPM_SOURCES_DIR="$HOME/rpmbuild/SOURCES"
+
+Source0="https://download.gnome.org/sources/gdk-pixbuf-xlib/$majversion/gdk-pixbuf-xlib-$version.tar.xz"
+Dest0="$name-$version.tar.gz"
+
+
+TEMP_DIR=$(mktemp -d)
+cd "$TEMP_DIR"
+echo "Cartella di lavoro: $TEMP_DIR"
+
+
+# Download del sorgente principale
+wget -O "$Dest0" "$Source0"
+mv "$Dest0" "$RPM_SOURCES_DIR/"
+cd ..
+rm -rf "$TEMP_DIR"
+ls -l "$RPM_SOURCES_DIR"
