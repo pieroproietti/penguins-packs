@@ -3,6 +3,7 @@
 clear
 echo downlad
 name=libgdk-pixbuf
+dname="gdk-pixbuf-xlib"
 Epoch:         1
 version="2.40.2"
 majversion="2.40"
@@ -10,8 +11,14 @@ majversion="2.40"
 RPM_SOURCES_DIR="$HOME/rpmbuild/SOURCES"
 
 Source0="https://download.gnome.org/sources/gdk-pixbuf-xlib/$majversion/gdk-pixbuf-xlib-$version.tar.xz"
-Dest0="$name-$version.tar.gz"
-
+dname="gdk-pixbuf-xlib"
+Dest0="$dname-$version.tar.xz"
+clear
+echo "Download sorgenti..."
+echo "Source0: $Source0"
+echo "Dest0: $Dest0"
+echo ""
+echo ""
 
 TEMP_DIR=$(mktemp -d)
 cd "$TEMP_DIR"
