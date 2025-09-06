@@ -5,7 +5,7 @@
 %define shortcommit %(echo %{commit} | cut -c1-7)
 
 Name:          penguins-eggs
-Version:       25.9.5
+Version:       25.9.6
 Release:       1mamba 
 Summary:       A console tool that allows you to remaster your system and redistribute it as live images on USB sticks or via PXE
 Group:         System/Tools
