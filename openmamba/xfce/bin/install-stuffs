@@ -1,0 +1,20 @@
+#!/bin/bash
+
+dnf install \
+ libsysprof-devel \
+ lightdm \
+ xf86-input-libinput \
+ xf86-video-modesetting \
+ xf86-video-qxl \
+ xf86-video-vesa \
+ xfce4-appfinder \
+ xfce4-mixer \
+ xfce4-panel \
+ xfce4-panel-devel \
+ xfce4-session \
+ xfce4-terminal \
+ xorg-drv-video-fbdev \
+ xorg-server
+ 
+
+
