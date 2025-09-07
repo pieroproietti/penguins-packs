@@ -4,9 +4,9 @@
 # But not these files...
 !.gitignore
 !.SRCINFO
-!export.sh
 !PKGBUILD
-!c
+!clean
 !e
-!m
-!u
+!build
+!updatePackageSums
+
