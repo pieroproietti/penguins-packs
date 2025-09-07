@@ -1,3 +1,0 @@
-
-echo "--- Esport pkg... ---"
-scp ~/rpmbuild/RPMS/x86_64/penguins-eggs-*.opensuse.x86_64.rpm root@192.168.1.2:/eggs/opensuse
