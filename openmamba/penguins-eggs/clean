@@ -1,0 +1,4 @@
+echo "clean..."
+rm -f ~/rpmbuild/SOURCES/*
+rm -f ~/rpmbuild/SRPMS/*
+rm -f ~/rpmbuild/RPMS/x86_64/*

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+clear
+echo downlad
+
+version="25.9.7"
+name="penguins-eggs"
+RPM_SOURCES_DIR="$HOME/rpmbuild/SOURCES"
+cp ~/penguins-eggs/*.patch $RPM_SOURCES_DIR
+
+Source0="https://github.com/pieroproietti/penguins-eggs/archive/refs/tags/v$version.tar.gz"
+Dest0="$name-$version.tar.gz"
+
+Source1="https://github.com/pieroproietti/penguins-eggs/releases/download/v$version/bootloaders.tar.gz"
+Dest1="bootloaders.tar.gz"
+
+TEMP_DIR=$(mktemp -d)
+cd "$TEMP_DIR"
+echo "Cartella di lavoro: $TEMP_DIR"
+
+
+# Download del sorgente principale
+wget -O "$Dest0" "$Source0"
+wget -O "$Dest1" "$Source1"
+mv "$Dest0" "$RPM_SOURCES_DIR/"
+mv "$Dest1" "$RPM_SOURCES_DIR/"
+cd ..
+rm -rf "$TEMP_DIR"
+ls -l "$RPM_SOURCES_DIR"

@@ -5,8 +5,8 @@
 !.gitignore
 !penguins-eggs.spec
 !README.md
-!b
-!c
-!d
+!build
+!clean
+!download
 !emul-spec
 
