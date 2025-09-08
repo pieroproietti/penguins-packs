@@ -6,6 +6,7 @@
 _commit=f955a5eab6524c83dbe382e6a4af8bb933320ebb
 pkgname=penguins-eggs
 pkgver=25.9.8
+_bootloaders=25.9.8
 pkgrel=1
 pkgdesc="A console tool that allows you to remaster your system and redistribute it as live images on USB sticks or via PXE"
 arch=('any')
@@ -51,7 +52,7 @@ makedepends=(
 options=('!strip')
 source=(
   "git+https://github.com/pieroproietti/penguins-eggs.git#commit=$_commit"
-  "bootloaders.tar.gz::https://github.com/pieroproietti/penguins-eggs/releases/download/v25.8.24/bootloaders.tar.gz"
+  "bootloaders.tar.gz::https://github.com/pieroproietti/penguins-bootloaders/releases/download/v$_bootloadersver/bootloaders.tar.gz"
 )
 
 pkgver() {
