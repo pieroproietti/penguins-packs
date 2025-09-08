@@ -38,7 +38,7 @@ pkgbase = penguins-eggs
 	optdepends = calamares: system installer GUI
 	optdepends = zsh-completions: eggs autocomplete
 	options = !strip
-	source = git+https://github.com/pieroproietti/penguins-eggs.git#commit=a0df75ce4008656eef154c2acd00228d3451e901
+	source = git+https://github.com/pieroproietti/penguins-eggs.git#tag=v25.9.8
 	source = bootloaders.tar.gz::https://github.com/pieroproietti/penguins-bootloaders/releases/download/v25.9.8/bootloaders.tar.gz
 	sha256sums = 93f96cbaeb1877dbe5b87589edbd4d68b8e3c69914a49a4cc96749afdfe3241e
 	sha256sums = c5dcfd82a8e65160af5c93365f07776a00d44e8b531d6641f4cadbbe7b4b5baf
