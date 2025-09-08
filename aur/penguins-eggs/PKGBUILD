@@ -2,10 +2,10 @@
 #
 # mantainer: Muflone http://www.muflone.com/contacts/english/
 # contributor: Piero Proietti <piero.proietti_at_gmail.com>
-_commit=a0df75ce4008656eef154c2acd00228d3451e901
+_bootloadersver=25.9.8
+
 pkgname=penguins-eggs
 pkgver=25.9.8
-_bootloadersver=25.9.8
 pkgrel=1
 pkgdesc="A console tool that allows you to remaster your system and redistribute it as live images on USB sticks or via PXE"
 arch=('any')
@@ -52,15 +52,10 @@ makedepends=(
 
 options=('!strip')
 source=(
-  "git+https://github.com/pieroproietti/penguins-eggs.git#commit=$_commit" 
+  "git+https://github.com/pieroproietti/penguins-eggs.git#tag=v$pkgver"
   "bootloaders.tar.gz::https://github.com/pieroproietti/penguins-bootloaders/releases/download/v$_bootloadersver/bootloaders.tar.gz"
 )
 
-
-pkgver() {
- cd "$srcdir"/"$pkgname"
- node -pe "require('./package.json').version"
-}
 
 build() {
  cd "$srcdir"/"$pkgname"
@@ -130,5 +125,5 @@ package() {
 }
 
 # updpkgsums
-sha256sums=('93f96cbaeb1877dbe5b87589edbd4d68b8e3c69914a49a4cc96749afdfe3241e'
+sha256sums=('SKIP'
             'c5dcfd82a8e65160af5c93365f07776a00d44e8b531d6641f4cadbbe7b4b5baf')
