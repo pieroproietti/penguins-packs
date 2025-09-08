@@ -120,5 +120,5 @@ cp -r "$srcdir/bootloaders" "$pkgdir/usr/lib/$pkgname/"
 }
 
 # updpkgsums
-sha256sums=('c08b51af8374d2443db7d5ea406dc0d20ec1d7191da8d9dd15c29d2a6744de7c'
-            'b5fd16c780c21c3976dd47f3bd97ef78073873017d8bf8a0a04c929df3db95a7')
+sha256sums=('37091dc5ec0e72905b5a4e61e21dcfc604b571c8492b3d9ad60a229574b59e1c'
+            'c5dcfd82a8e65160af5c93365f07776a00d44e8b531d6641f4cadbbe7b4b5baf')
