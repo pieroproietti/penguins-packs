@@ -18,7 +18,7 @@
 # Non generare il pacchetto di debug, che causa problemi con i binari pre-compilati
 %global debug_package %{nil}
 
-%_bootloadersver 25.9.0
+%define bootloadersver 25.9.0
 
 Name:           %{app_name}
 Version:        25.9.8
@@ -31,7 +31,7 @@ License:        GPL-3.0-or-later
 URL:            https://penguins-eggs.net/
 Source0:        https://github.com/pieroproietti/penguins-eggs/archive/v%{version}/%{app_name}-%{version}.tar.gz
 #Source1:        https://github.com/pieroproietti/penguins-eggs/releases/download/v%{version}/bootloaders.tar.gz
-Source1:        https://github.com/pieroproietti/penguins-bootloaders/releases/download/v%%{_bootloadersver}/bootloaders.tar.gz"
+Source1:        https://github.com/pieroproietti/penguins-bootloaders/releases/download/v%{bootloadersver}/bootloaders.tar.gz
 
 
 # Provides a virtual dependency for the bundled nodejs modules
