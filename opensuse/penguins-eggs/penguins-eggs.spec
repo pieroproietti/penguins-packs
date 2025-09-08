@@ -23,6 +23,9 @@
 %define _signature gpg
 %define _gpg_name none
 
+# BootloadersVersion
+%define bootloadersver 25.9.8
+
 Name:           %{app_name}
 Version:        25.9.8
 Release:        1%{?dist}
@@ -33,8 +36,7 @@ AutoReqProv:    no
 License:        GPL-3.0-or-later
 URL:            https://penguins-eggs.net/
 Source0:        https://github.com/pieroproietti/penguins-eggs/archive/v%{version}/%{app_name}-%{version}.tar.gz
-Source1:        https://github.com/pieroproietti/penguins-eggs/releases/download/v%{version}/bootloaders.tar.gz
-
+Source1:        https://github.com/pieroproietti/penguins-bootloaders/releases/download/v%{bootloadersver}/bootloaders.tar.gz
 
 # NOTA: La direttiva "Provides: bundled(nodejs-module)" è una convenzione di Fedora
 # e viene omessa su openSUSE. La gestione dei moduli nodejs è affidata a pnpm.
