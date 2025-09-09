@@ -3,7 +3,9 @@
 echo "--- Pulizia dei tentativi precedenti... ---"
 rm -rf ~/rpmbuild/BUILD/*
 rm -rf ~/rpmbuild/BUILDROOT/*
+rm -rf ~/rpmbuild/RPMS/x86_64/*
 rm -rf ~/rpmbuild/SOURCES/*
+rm -rf ~/rpmbuild/SRPMS/*
 echo "--- Pulizia completata. ---"
 
 #
