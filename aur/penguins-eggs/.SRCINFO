@@ -40,7 +40,7 @@ pkgbase = penguins-eggs
 	options = !strip
 	source = git+https://github.com/pieroproietti/penguins-eggs.git#tag=v25.9.13
 	source = bootloaders.tar.gz::https://github.com/pieroproietti/penguins-bootloaders/releases/download/v25.9.8/bootloaders.tar.gz
-	sha256sums = b01f78ff13f22b82ac3d5c92d5a5f588ce410d6ace8fcb5564eebd38b7d7c232
+	sha256sums = 19e4e921bac3754d2bb44854204582464eb0e4339efa8404d5bec7f436d82310
 	sha256sums = c5dcfd82a8e65160af5c93365f07776a00d44e8b531d6641f4cadbbe7b4b5baf
 
 pkgname = penguins-eggs
