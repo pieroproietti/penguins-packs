@@ -96,7 +96,7 @@ install -D -m0644 assets/eggs.png -t %{buildroot}%{_datadir}/pixmaps/
 
 # Symlink executable
 install -d %{buildroot}%{_bindir}
-ln -s ../lib/%{name}/bin/run.js %{buildroot}%{_bindir}/eggs
+ln -s ../lib/%{app_name}/bin/run.js %{buildroot}%{_bindir}/eggs
 
 # Remove prebuilt bootoader binaries causing unresolved dependencies in openmamba
 rm -f %{buildroot}%{_prefix}/lib/penguins-eggs/bootloaders/grub/i386-pc/grub-bios-setup
