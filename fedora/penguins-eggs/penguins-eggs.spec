@@ -99,7 +99,7 @@ cp -r ../bootloaders %{buildroot}%{nodejs_prefix}/
 
 # Install executable symlink
 install -d -m 755 %{buildroot}%{_bindir}
-ln -s ../%{nodejs_prefix}/bin/run.js %{buildroot}%{_bindir}/eggs
+ln -s ../lib/%{app_name}/bin/run.js %{buildroot}%{_bindir}/eggs
 
 # Install shell completions
 install -d -m 755 %{buildroot}%{_datadir}/bash-completion/completions
