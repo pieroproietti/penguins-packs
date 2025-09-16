@@ -22,7 +22,7 @@
 %define bootloadersver 25.9.8
 
 Name:           %{app_name}
-Version:        25.9.8
+Version: 25.9.14
 Release:        1%{?dist}
 Summary:        A console tool to remaster your system and create live images
 # rimuove scoperta dipendenze
