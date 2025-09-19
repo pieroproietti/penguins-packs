@@ -92,7 +92,7 @@ cp -r \
     eui \
     node_modules \
     scripts \
-    %{buildroot}%{nodejs_prefix}/
+    %{buildroot}%{nodejs_prefix}
 
 # La cartella si trova in ../bootloaders rispetto alla directory corrente
 cp -r ../bootloaders %{buildroot}%{nodejs_prefix}/
@@ -103,10 +103,10 @@ ln -s ../lib/%{app_name}/bin/run.js %{buildroot}%{_bindir}/eggs
 
 # Install shell completions
 install -d -m 755 %{buildroot}%{_datadir}/bash-completion/completions
-ln -s ../../%{nodejs_prefix}/scripts/eggs.bash %{buildroot}%{_datadir}/bash-completion/completions/eggs
+ln -s ../../../..%{nodejs_prefix}/scripts/eggs.bash %{buildroot}%{_datadir}/bash-completion/completions/eggs
 
 install -d -m 755 %{buildroot}%{_datadir}/zsh/site-functions
-ln -s ../../%{nodejs_prefix}/scripts/_eggs %{buildroot}%{_datadir}/zsh/site-functions/_eggs
+ln -s ../../../..%{nodejs_prefix}/scripts/_eggs %{buildroot}%{_datadir}/zsh/site-functions/_eggs
 
 # Install man page
 install -d -m 755 %{buildroot}%{_mandir}/man1
