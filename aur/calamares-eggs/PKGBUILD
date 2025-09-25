@@ -10,7 +10,7 @@ _commit=f594bfb5e35479cecce2bf336465edc6dc7a4bc5
 pkgver=3.4.0
 pkgrel=1
 pkgdesc="calamares-eggs: supply by penguins-eggs project"
-url="https://github.com/calamares/calamares"
+url="https://codeberg.org/Calamares/calamares"
 license=("GPL-3.0-or-later")
 arch=('i686' 'x86_64')
 
