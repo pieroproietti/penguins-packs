@@ -1,6 +1,6 @@
 pkgbase = calamares-eggs
 	pkgdesc = calamares-eggs: supply by penguins-eggs project
-	pkgver = 3.3.14
+	pkgver = 3.4.0
 	pkgrel = 1
 	url = https://codeberg.org/Calamares/calamares
 	arch = i686
@@ -29,9 +29,9 @@ pkgbase = calamares-eggs
 	depends = solid
 	depends = squashfs-tools
 	depends = yaml-cpp
-	provides = calamares=3.3.14
+	provides = calamares=3.4.0
 	conflicts = calamares
-	source = git+https://codeberg.org/Calamares/calamares#commit=f594bfb5e35479cecce2bf336465edc6dc7a4bc5
+	source = git+https://codeberg.org/Calamares/calamares#commit=78d4208a03b0abdfb68e94c9c08a28f37a473ee6
 	sha256sums = SKIP
 
 pkgname = calamares-eggs
