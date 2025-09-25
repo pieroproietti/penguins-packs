@@ -3,8 +3,8 @@
 
 # But not these files...
 !.gitignore
-!c
-!m
+!clean
+!build
 !.SRCINFO
 !PKGBUILD
 !_yay-support.patch
