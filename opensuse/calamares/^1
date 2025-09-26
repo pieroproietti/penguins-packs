@@ -1,0 +1,402 @@
+warning: Macro expanded in comment on line 17: %{name} e %{version} sono macro.
+
++ umask 022
++ cd /home/artisan/rpmbuild/BUILD/calamares-eggs-3.4.0-build
++ rm -rf calamares-eggs-3.4.0
++ /usr/lib/rpm/rpmuncompress -x -v /home/artisan/rpmbuild/SOURCES/calamares-eggs-3.4.0.tar.gz
+ /usr/bin/gzip -dc  '/home/artisan/rpmbuild/SOURCES/calamares-eggs-3.4.0.tar.gz' | /usr/bin/tar -xvvof - 
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd calamares-eggs-3.4.0
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ cd /home/artisan/rpmbuild/BUILD/calamares-eggs-3.4.0-build
++ rm -rf calamares-eggs-3.4.0
++ /usr/lib/rpm/rpmuncompress -x /home/artisan/rpmbuild/SOURCES/calamares-eggs-3.4.0.tar.gz
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd calamares-eggs-3.4.0
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ RPM_EC=0
+++ jobs -p
++ exit 0
++ umask 022
++ cd /home/artisan/rpmbuild/BUILD/calamares-eggs-3.4.0-build
++ /usr/bin/rm -rf /home/artisan/rpmbuild/BUILD/calamares-eggs-3.4.0-build/BUILDROOT
+++ dirname /home/artisan/rpmbuild/BUILD/calamares-eggs-3.4.0-build/BUILDROOT
++ /usr/bin/mkdir -p /home/artisan/rpmbuild/BUILD/calamares-eggs-3.4.0-build
++ /usr/bin/mkdir /home/artisan/rpmbuild/BUILD/calamares-eggs-3.4.0-build/BUILDROOT
++ cd calamares-eggs-3.4.0
++ find . -type f -name CMakeLists.txt -exec sed -i -re '/^[[:blank:]]*[sS][eE][tT][[:blank:]]*\([[:blank:]]*(CMAKE_BUILD_TYPE|CMAKE_COLOR_MAKEFILE|CMAKE_INSTALL_PREFIX|CMAKE_VERBOSE_MAKEFILE).*\)/{s/^/#IGNORE /}' '{}' +
++ mkdir -p build
++ cd build
++ /usr/bin/cmake /home/artisan/rpmbuild/BUILD/calamares-eggs-3.4.0-build/calamares-eggs-3.4.0/. '-GUnix Makefiles' -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_BINDIR:PATH=bin -DCMAKE_INSTALL_SBINDIR:PATH=sbin -DCMAKE_INSTALL_LIBEXECDIR:PATH=libexec -DCMAKE_INSTALL_SYSCONFDIR:PATH=etc -DCMAKE_INSTALL_SHAREDSTATEDIR:PATH=/var/lib -DCMAKE_INSTALL_LOCALSTATEDIR:PATH=var -DCMAKE_INSTALL_RUNSTATEDIR:PATH=run -DCMAKE_INSTALL_LIBDIR:PATH=lib64 -DCMAKE_INSTALL_INCLUDEDIR:PATH=include -DCMAKE_INSTALL_DATAROOTDIR:PATH=share -DCMAKE_INSTALL_DOCDIR:PATH=share/doc/packages/calamares-eggs -DCMAKE_INSTALL_MANDIR:PATH=share/man -DCMAKE_INSTALL_INFODIR:PATH=share/info -DINCLUDE_INSTALL_DIR:PATH=/usr/include -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DSYSCONF_INSTALL_DIR:PATH=/etc -DSHARE_INSTALL_PREFIX:PATH=/usr/share -DCMAKE_BUILD_TYPE=RelWithDebInfo '-DCMAKE_C_FLAGS=-O2 -g -m64 -fmessage-length=0 -D_FORTIFY_SOURCE=2 -fstack-protector -funwind-tables -fasynchronous-unwind-tables' '-DCMAKE_CXX_FLAGS=-O2 -g -m64 -fmessage-length=0 -D_FORTIFY_SOURCE=2 -fstack-protector -funwind-tables -fasynchronous-unwind-tables' '-DCMAKE_Fortran_FLAGS=-O2 -g -m64 -fmessage-length=0 -D_FORTIFY_SOURCE=2 -fstack-protector -funwind-tables -fasynchronous-unwind-tables' '-DCMAKE_EXE_LINKER_FLAGS= -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' '-DCMAKE_MODULE_LINKER_FLAGS= -Wl,--as-needed' '-DCMAKE_SHARED_LINKER_FLAGS= -Wl,--as-needed -Wl,--no-undefined -Wl,-z,now' -DLIB_SUFFIX=64 -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=ON -DBUILD_STATIC_LIBS:BOOL=OFF -DCMAKE_COLOR_MAKEFILE:BOOL=OFF -DCMAKE_INSTALL_DO_STRIP:BOOL=OFF -DCMAKE_MODULES_INSTALL_DIR=/usr/lib64/cmake/calamares-eggs -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -B build -G Ninja -DWITH_QT6=ON -DINSTALL_CONFIG=ON '-DSKIP_MODULES=dracut dracutlukscfg dummycpp dummyprocess dummypython dummypythonqt initramfs initramfscfg interactiveterminal packagechooser packagechooserq services-openrc' -DBUILD_TESTING=OFF
+-- Configured QML module: calamares.slideshow
+
+-- Found Calamares module: bootloader
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/bootloader
+   CONFIGURATION_FILES: bootloader.conf => [Build directory and share/calamares/modules]
+
+-- Found Calamares module: contextualprocess
+   TYPE: job
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/contextualprocess
+   CONFIGURATION_FILES: contextualprocess.conf => share/calamares/modules
+
+-- Found Calamares module: displaymanager
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/displaymanager
+   CONFIGURATION_FILES: displaymanager.conf => [Build directory and share/calamares/modules]
+
+-- Skipping module dracut (user request).
+
+-- Skipping module dracutlukscfg (user request).
+
+-- Skipping module dummycpp (user request).
+
+-- Skipping module dummyprocess (user request).
+
+-- Skipping module dummypython (user request).
+
+-- Found Calamares module: finished
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: Qt6::DBus
+   PLUGIN_DESTINATION: lib64/calamares/modules/finished
+   CONFIGURATION_FILES: finished.conf => share/calamares/modules
+
+-- Found Calamares module: finishedq
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: Qt6::DBus
+   PLUGIN_DESTINATION: lib64/calamares/modules/finishedq
+   CONFIGURATION_FILES: finishedq.conf => share/calamares/modules
+   RESOURCES: finishedq-qt6.qrc
+
+-- Found Calamares module: fsresizer
+   TYPE: job
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: calamares::kpmcore
+   PLUGIN_DESTINATION: lib64/calamares/modules/fsresizer
+   CONFIGURATION_FILES: fsresizer.conf => share/calamares/modules
+
+-- Found Calamares module: fstab
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/fstab
+   CONFIGURATION_FILES: fstab.conf => [Build directory and share/calamares/modules]
+
+-- Found Calamares module: grubcfg
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/grubcfg
+   CONFIGURATION_FILES: grubcfg.conf => [Build directory and share/calamares/modules]
+
+-- Found Calamares module: hostinfo
+   TYPE: job
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/hostinfo
+
+-- Found Calamares module: hwclock
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/hwclock
+
+-- Found Calamares module: initcpio
+   TYPE: job
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/initcpio
+   CONFIGURATION_FILES: initcpio.conf => share/calamares/modules
+
+-- Found Calamares module: initcpiocfg
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/initcpiocfg
+   CONFIGURATION_FILES: initcpiocfg.conf => [Build directory and share/calamares/modules]
+
+-- Skipping module initramfs (user request).
+
+-- Skipping module initramfscfg (user request).
+
+-- Skipping module interactiveterminal (user request).
+
+-- Found Calamares module: keyboard
+   TYPE: viewmodule
+   LINK_LIBRARIES: Qt6::DBus
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/keyboard
+   CONFIGURATION_FILES: keyboard.conf => share/calamares/modules
+   RESOURCES: keyboard.qrc
+
+-- Found Calamares module: keyboardq
+   TYPE: viewmodule
+   LINK_LIBRARIES: Qt6::DBus
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/keyboardq
+   CONFIGURATION_FILES: keyboardq.conf => share/calamares/modules
+   RESOURCES: keyboardq-qt6.qrc
+
+-- Found Calamares module: license
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/license
+   CONFIGURATION_FILES: license.conf => share/calamares/modules
+
+-- Found Calamares module: locale
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: Qt6::Network;yamlcpp::yamlcpp
+   PLUGIN_DESTINATION: lib64/calamares/modules/locale
+   CONFIGURATION_FILES: locale.conf => share/calamares/modules
+   RESOURCES: locale.qrc
+
+-- Found Calamares module: localecfg
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/localecfg
+
+-- Found Calamares module: localeq
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: Qt6::Network
+   PLUGIN_DESTINATION: lib64/calamares/modules/localeq
+   CONFIGURATION_FILES: localeq.conf => share/calamares/modules
+   RESOURCES: localeq-qt6.qrc
+
+-- Found Calamares module: luksbootkeyfile
+   TYPE: job
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/luksbootkeyfile
+   CONFIGURATION_FILES: luksbootkeyfile.conf => share/calamares/modules
+
+-- Found Calamares module: luksopenswaphookcfg
+   TYPE: job
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/luksopenswaphookcfg
+   CONFIGURATION_FILES: luksopenswaphookcfg.conf => share/calamares/modules
+
+-- Found Calamares module: machineid
+   TYPE: job
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/machineid
+   CONFIGURATION_FILES: machineid.conf => share/calamares/modules
+
+-- Found Calamares module: mkinitfs
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/mkinitfs
+
+-- Found Calamares module: mount
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/mount
+   CONFIGURATION_FILES: mount.conf => [Build directory and share/calamares/modules]
+
+-- Found Calamares module: netinstall
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: Qt6::Network
+   PLUGIN_DESTINATION: lib64/calamares/modules/netinstall
+   CONFIGURATION_FILES: netinstall.conf => share/calamares/modules
+
+-- Found Calamares module: networkcfg
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/networkcfg
+
+-- Found Calamares module: notesqml
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/notesqml
+   CONFIGURATION_FILES: notesqml.conf => share/calamares/modules
+   RESOURCES: notesqml.qrc
+
+-- Found Calamares module: oemid
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: Qt6::Widgets
+   PLUGIN_DESTINATION: lib64/calamares/modules/oemid
+   CONFIGURATION_FILES: oemid.conf => share/calamares/modules
+
+-- Found Calamares module: openrcdmcryptcfg
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/openrcdmcryptcfg
+   CONFIGURATION_FILES: openrcdmcryptcfg.conf => [Build directory and share/calamares/modules]
+
+-- Skipping module packagechooser (user request).
+
+-- Skipping module packagechooserq (user request).
+
+-- Found Calamares module: packages
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/packages
+   CONFIGURATION_FILES: packages.conf => [Build directory and share/calamares/modules]
+
+-- Found Calamares module: partition
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: calamares::kpmcore;KF6::CoreAddons
+   PLUGIN_DESTINATION: lib64/calamares/modules/partition
+   CONFIGURATION_FILES: partition.conf => share/calamares/modules
+
+-- Found Calamares module: plymouthcfg
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/plymouthcfg
+   CONFIGURATION_FILES: plymouthcfg.conf => [Build directory and share/calamares/modules]
+
+-- Found Calamares module: preservefiles
+   TYPE: job
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/preservefiles
+   CONFIGURATION_FILES: preservefiles.conf => share/calamares/modules
+
+-- Found Calamares module: rawfs
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/rawfs
+   CONFIGURATION_FILES: rawfs.conf => [Build directory and share/calamares/modules]
+
+-- Found Calamares module: removeuser
+   TYPE: job
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/removeuser
+   CONFIGURATION_FILES: removeuser.conf => share/calamares/modules
+
+-- Skipping module services-openrc (user request).
+
+-- Found Calamares module: services-systemd
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/services-systemd
+   CONFIGURATION_FILES: services-systemd.conf => [Build directory and share/calamares/modules]
+
+-- Found Calamares module: shellprocess
+   TYPE: job
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/shellprocess
+   CONFIGURATION_FILES: shellprocess.conf => share/calamares/modules
+
+-- Found Calamares module: summary
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/summary
+
+-- Found Calamares module: summaryq
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: calamaresui
+   PLUGIN_DESTINATION: lib64/calamares/modules/summaryq
+   RESOURCES: summaryq-qt6.qrc
+
+-- Found Calamares module: tracking
+   TYPE: viewmodule
+   LINK_LIBRARIES: KF6::CoreAddons
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/tracking
+   CONFIGURATION_FILES: tracking.conf => share/calamares/modules
+   RESOURCES: page_trackingstep.qrc
+
+-- Found Calamares module: umount
+   TYPE: job
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/umount
+   CONFIGURATION_FILES: umount.conf => share/calamares/modules
+
+-- Found Calamares module: unpackfs
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/unpackfs
+   CONFIGURATION_FILES: unpackfs.conf => [Build directory and share/calamares/modules]
+
+-- Found Calamares module: unpackfsc
+   TYPE: job
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/unpackfsc
+   CONFIGURATION_FILES: unpackfsc.conf => share/calamares/modules
+
+-- Found Calamares module: users
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: users_internal;crypt::crypt;KF6::CoreAddons;Qt6::DBus;crypt::crypt;/usr/lib64/libpwquality.so
+   PLUGIN_DESTINATION: lib64/calamares/modules/users
+   CONFIGURATION_FILES: users.conf => share/calamares/modules
+   RESOURCES: users.qrc
+
+-- Found Calamares module: usersq
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: users_internal;/usr/lib64/libcrypt.so;/usr/lib64/libpwquality.so;Qt6::DBus
+   PLUGIN_DESTINATION: lib64/calamares/modules/usersq
+   CONFIGURATION_FILES: usersq.conf => share/calamares/modules
+   RESOURCES: usersq-qt6.qrc
+
+-- Found Calamares module: welcome
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: Qt6::DBus;Qt6::Network
+   PLUGIN_DESTINATION: lib64/calamares/modules/welcome
+   CONFIGURATION_FILES: welcome.conf => share/calamares/modules
+   RESOURCES: welcome.qrc
+
+-- Found Calamares module: welcomeq
+   TYPE: viewmodule
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: Qt6::DBus;Qt6::Network
+   PLUGIN_DESTINATION: lib64/calamares/modules/welcomeq
+   CONFIGURATION_FILES: welcomeq.conf => share/calamares/modules
+   RESOURCES: welcomeq-qt6.qrc
+
+-- Found Calamares module: zfs
+   TYPE: job
+   LINK_LIBRARIES: 
+   LINK_PRIVATE_LIBRARIES: 
+   PLUGIN_DESTINATION: lib64/calamares/modules/zfs
+   CONFIGURATION_FILES: zfs.conf => share/calamares/modules
+
+-- Found Calamares module: zfshostid
+   TYPE: jobmodule
+   MODULE_DESTINATION: lib64/calamares/modules/zfshostid
+
+-- Found Calamares branding component: default
+   TYPE: branding component
+   BRANDING_COMPONENT_DESTINATION: share/calamares/branding/default
+   BRANDING_TRANSLATIONS: 5 language(s)
+
+-- Skipped modules:
+--   Skipped dracut (user request).
+--   Skipped dracutlukscfg (user request).
+--   Skipped dummycpp (user request).
+--   Skipped dummyprocess (user request).
+--   Skipped dummypython (user request).
+--   Skipped initramfs (user request).
+--   Skipped initramfscfg (user request).
+--   Skipped interactiveterminal (user request).
+--   Skipped packagechooser (user request).
+--   Skipped packagechooserq (user request).
+--   Skipped plasmalnf (missing requirements).
+--   Skipped services-openrc (user request).
+
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    BUILD_STATIC_LIBS
+    CMAKE_Fortran_FLAGS
+    CMAKE_INSTALL_DO_STRIP
+    CMAKE_MODULES_INSTALL_DIR
+    CMAKE_VERBOSE_MAKEFILE
+    INCLUDE_INSTALL_DIR
+    LIB_INSTALL_DIR
+    LIB_SUFFIX
+    SHARE_INSTALL_PREFIX
+    SYSCONF_INSTALL_DIR
+
+
++ /usr/bin/make -O VERBOSE=1 -j4
+make: *** No targets specified and no makefile found.  Stop.
+error: Bad exit status from /var/tmp/rpm-tmp.QAQZzP (%build)
+    Macro expanded in comment on line 17: %{name} e %{version} sono macro.
+
+    Bad exit status from /var/tmp/rpm-tmp.QAQZzP (%build)

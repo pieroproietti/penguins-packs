@@ -38,3 +38,4 @@ sudo zypper install \
     kf6-kwidgetsaddons-devel 
 
 	
+sudo zypper install kf6-kcrash-devel kf6-ki18n-devel kf6-kiconthemes-devel libpolkit-qt6-1-devel python3-devel yaml-cpp-devel
