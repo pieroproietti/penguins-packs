@@ -1,0 +1,13 @@
+# Sostituisci con il tuo hash di commit
+COMMIT="78d4208a03b0abdfb68e94c9c08a28f37a473ee6"
+VERSION="3.4.0"
+
+# Clona il repo se non l'hai già fatto
+git clone https://codeberg.org/Calamares/calamares.git
+cd calamares
+git checkout $COMMIT
+
+# Crea l'archivio con il nome corretto
+git archive --format=tar.gz --prefix="calamares-eggs-${VERSION}/" -o "../calamares-eggs-${VERSION}.tar.gz" HEAD
+
+cd ..

@@ -1,0 +1,1 @@
+rpmbuild -ba ~/rpmbuild/SPECS/calamares-eggs.spec
