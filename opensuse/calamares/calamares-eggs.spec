@@ -20,31 +20,31 @@ Source0:        %{name}-%{version}.tar.gz
 # --- DIPENDENZE DI COMPILAZIONE (da makedepends) ---
 # I pacchetti necessari solo per costruire il software.
 # Su openSUSE, i pacchetti per lo sviluppo terminano spesso in "-devel".
+# BuildRequires:  pkgconfig(boost)          # there is not on opensuse leap
+# BuildRequires:  pkgconfig(libkpmcore)     # there is not on opensuse leap
+# BuildRequires:  pkgconfig(libpwquality)   # there is not on opensuse leap
+# BuildRequires:  pkgconfig(solid)          # there is not on opensuse leap
 BuildRequires:  cmake
 BuildRequires:  extra-cmake-modules
 BuildRequires:  gcc-c++
-BuildRequires:  ninja
-# BuildRequires:  pkgconfig(boost)          # manca in opensuse leap
-# BuildRequires:  pkgconfig(libkpmcore)     # manca in opensuse leap
-# BuildRequires:  pkgconfig(libpwquality)   # manca in opensuse leap
-BuildRequires:  pkgconfig(polkit-qt6-1)
-BuildRequires:  pkgconfig(python3)
-BuildRequires:  pkgconfig(Qt6Core)
-BuildRequires:  pkgconfig(Qt6Gui)
-BuildRequires:  pkgconfig(Qt6Svg)
-BuildRequires:  pkgconfig(Qt6UiTools)
-# BuildRequires:  pkgconfig(solid)          # manca in opensuse leap
-BuildRequires:  pkgconfig(yaml-cpp)
 BuildRequires:  kf6-kconfig-devel
 BuildRequires:  kf6-kcoreaddons-devel
 BuildRequires:  kf6-kcrash-devel
 BuildRequires:  kf6-ki18n-devel
 BuildRequires:  kf6-kiconthemes-devel
+BuildRequires:  kf6-kwidgetsaddons-devel
+BuildRequires:  ninja
+BuildRequires:  pkgconfig(polkit-qt6-1)
+BuildRequires:  pkgconfig(python3)
 BuildRequires:  pkgconfig(Qt6Concurrent)
+BuildRequires:  pkgconfig(Qt6Core)
+BuildRequires:  pkgconfig(Qt6Gui)
+BuildRequires:  pkgconfig(Qt6Svg)
+BuildRequires:  pkgconfig(Qt6UiTools)
+BuildRequires:  pkgconfig(yaml-cpp)
 BuildRequires:  qt6-linguist-devel
 BuildRequires:  qt6-quick-devel
 BuildRequires:  qt6-quickwidgets-devel
-BuildRequires:  kf6-kwidgetsaddons-devel
 
 
 # --- DIPENDENZE DI ESECUZIONE (da depends) ---

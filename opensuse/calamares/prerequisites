@@ -1,12 +1,40 @@
 #sudo zypper source-install --build-deps-only ~/rpmbuild/SPECS/calamares-eggs.spec
-sudo zypper install cmake extra-cmake-modules gcc-c++ ninja kf6-kconfig-devel kf6-kcoreaddons-devel kf6-kcrash-devel kf6-ki18n-devel kf6-kiconthemes-devel libQt6Core-devel libQt6Gui-devel libQt6Svg-devel libQt6UiTools-devel boost-devel libkpmcore-devel libpwquality-devel polkit-qt6-devel python3-devel kf6-solid-devel yaml-cpp-devel
-#sudo zypper install libQt6Svg-devel libQt6UiTools-devel boost-devel libkpmcore-devel libpwquality-devel libpolkit-qt6-1-devel kf6-solid-devel
-sudo zypper install qt6-svg-devel qt6-uitools-devel boost-devel libkpmcore-devel libpwquality-devel kf6-solid-devel
-sudo zypper install kpmcore-devel
-sudo zypper install qt6-concurrent-devel
-sudo zypper install qt6-linguist-devel
-sudo zypper install qt6-quick-devel
-sudo zypper install qt6-quickwidgets-devel
-sudo zypper install kf6-kwidgetsaddons-devel
+sudo zypper install \
+    boost-devel \
+    cmake \
+    extra-cmake-modules \
+    gcc-c++ \
+    kf6-kconfig-devel \
+    kf6-kcoreaddons-devel 
+    kf6-kcrash-devel \
+    kf6-ki18n-devel \
+    kf6-kiconthemes-devel \
+    kf6-solid-devel \
+    libkpmcore-devel \
+    libpwquality-devel \
+    libQt6Core-devel \
+    libQt6Gui-devel \
+    libQt6Svg-devel \
+    libQt6UiTools-devel \
+    ninja \
+    polkit-qt6-devel \
+    python3-devel \
+    yaml-cpp-devel
+
+sudo zypper install \
+    qt6-uitools-devel \
+    qt6-svg-devel \
+    libpwquality-devel \
+    libkpmcore-devel \
+    kf6-solid-devel \
+    boost-devel
+
+sudo zypper install \
+    qt6-quickwidgets-devel \
+    qt6-quick-devel \
+    qt6-linguist-devel \
+    qt6-concurrent-devel \
+    kpmcore-devel \
+    kf6-kwidgetsaddons-devel 
 
 	

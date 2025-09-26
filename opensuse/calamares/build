@@ -1,1 +1,5 @@
+rm ~/rpmbuild/SOURCES/*
+rm ~/rpmbuild/SPECS/*
+cp calamares-eggs-3.4.0.tar.gz ~/rpmbuild/SOURCES/
+cp calamares-eggs.spec ~/rpmbuild/SPECS/
 rpmbuild -ba ~/rpmbuild/SPECS/calamares-eggs.spec
