@@ -27,7 +27,7 @@
 %define bootloadersver 25.9.8
 
 Name:           %{app_name}
-Version: 25.9.24
+Version: 25.9.27
 Release:        1%{?dist}
 Summary:        A console tool to remaster your system and create live images
 # Manteniamo la disattivazione delle dipendenze automatiche a causa dei moduli nodejs inclusi (bundled)
