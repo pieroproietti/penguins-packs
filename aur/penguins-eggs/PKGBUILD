@@ -125,5 +125,5 @@ package() {
 }
 
 # updpkgsums
-sha256sums=('4938861714cfddcf7f8ef59b7b57c8b8e22578283c838fd0dd712ddeaefee0c2'
+sha256sums=('c728b3d94f4943e24b316ccce5335aa3ac3a66ad84538eac4a944e711364ed36'
             'c5dcfd82a8e65160af5c93365f07776a00d44e8b531d6641f4cadbbe7b4b5baf')
