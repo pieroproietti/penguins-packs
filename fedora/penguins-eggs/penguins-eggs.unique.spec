@@ -23,7 +23,7 @@
 %global _with_network 1
 
 Name:           %{app_name}
-Version:        25.10.4
+Version:        25.10.5
 Release:        1%{?dist}
 Summary:        A console tool to remaster your system and create live images
 # rimuove scoperta dipendenze
