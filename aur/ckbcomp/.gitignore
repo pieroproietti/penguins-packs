@@ -1,0 +1,10 @@
+# Ignore everything in calamares-eggs
+*
+
+# But not these files...
+!.gitignore
+!clean
+!build
+!.SRCINFO
+!PKGBUILD
+!_yay-support.patch

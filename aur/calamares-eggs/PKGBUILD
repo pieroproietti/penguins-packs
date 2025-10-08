@@ -1,4 +1,4 @@
-# Maintainer:
+# Maintainer: 
 # Piero Proietti <piero[dot]proietti[at]gmail.com>
 # Original from : Kenny Strawn <Kenny[dot]Strawn[at]gmail[dot]com>
 # 
@@ -6,7 +6,6 @@
 _pkgname="calamares"
 pkgname="$_pkgname-eggs"
 
-# 3.3.14 _commit="f594bfb5e35479cecce2bf336465edc6dc7a4bc5"
 _commit="78d4208a03b0abdfb68e94c9c08a28f37a473ee6"
 pkgver=3.4.0
 pkgrel=1
@@ -17,7 +16,7 @@ arch=('i686' 'x86_64')
 
 depends=(
   'boost-libs'
-  # 'ckbcomp' sta solo in aur
+  'ckbcomp'
   'hwinfo'
   'kconfig'
   'kcoreaddons'
@@ -45,7 +44,7 @@ makedepends=(
 )
 
 provides=("$_pkgname=${pkgver%%.r*}")
-conflicts=("$_pkgname")
+conflicts=("$_pkgname" 'calamares')
 
 backup=(
   #'usr/share/calamares/modules/bootloader.conf'
@@ -59,9 +58,7 @@ _pkgsrc="$_pkgname" # commit
 
 source=("git+https://codeberg.org/Calamares/calamares#commit=${_commit}")
 #source=("https://codeberg.org/Calamares/calamares/releases/download/v$pkgver/calamares-$pkgver.tar.gz")
-sha256sums=(
-  'SKIP'
-)
+sha256sums=('03a3f78232308d7522a8391b77c996d64a36278a8c06750bc25aa26d2ea64f67')
 _pkgver() {
   cd "$_pkgsrc"
 

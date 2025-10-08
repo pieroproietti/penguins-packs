@@ -13,6 +13,7 @@ pkgbase = calamares-eggs
 	makedepends = qt6-tools
 	makedepends = qt6-translations
 	depends = boost-libs
+	depends = ckbcomp
 	depends = hwinfo
 	depends = kconfig
 	depends = kcoreaddons
@@ -31,7 +32,8 @@ pkgbase = calamares-eggs
 	depends = yaml-cpp
 	provides = calamares=3.4.0
 	conflicts = calamares
+	conflicts = calamares
 	source = git+https://codeberg.org/Calamares/calamares#commit=78d4208a03b0abdfb68e94c9c08a28f37a473ee6
-	sha256sums = SKIP
+	sha256sums = 03a3f78232308d7522a8391b77c996d64a36278a8c06750bc25aa26d2ea64f67
 
 pkgname = calamares-eggs
