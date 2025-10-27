@@ -1,7 +1,7 @@
 pkgbase = calamares-eggs
 	pkgdesc = calamares-eggs: supply by penguins-eggs project
 	pkgver = 3.4.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://codeberg.org/Calamares/calamares
 	arch = i686
 	arch = x86_64
@@ -34,6 +34,6 @@ pkgbase = calamares-eggs
 	conflicts = calamares
 	conflicts = calamares
 	source = git+https://codeberg.org/Calamares/calamares#commit=c9e49988651a1c7c2881810ec465446a1f96d822
-	sha256sums = 03a3f78232308d7522a8391b77c996d64a36278a8c06750bc25aa26d2ea64f67
+	sha256sums = dad76589f87ed0221d7f2dd14d010bc6cd3bcf6914bee8e5df426e56538b1e08
 
 pkgname = calamares-eggs
