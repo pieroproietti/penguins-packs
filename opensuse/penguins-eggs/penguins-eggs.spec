@@ -27,7 +27,7 @@
 %define bootloadersver 25.9.8
 
 Name:           %{app_name}
-Version: 25.10.5
+Version: 25.10.30
 Release:        1%{?dist}
 Summary:        A console tool to remaster your system and create live images
 # Manteniamo la disattivazione delle dipendenze automatiche a causa dei moduli nodejs inclusi (bundled)
@@ -65,6 +65,7 @@ Requires:       grub2-x86_64-efi
 Requires:       jq
 Requires:       lvm2
 Requires:       nodejs
+Requires:       polkit
 Requires:       nvme-cli
 Requires:       rsync
 Requires:       shadow
