@@ -46,6 +46,7 @@ provides=("$_pkgname=${pkgver%%.r*}")
 
 conflicts=("$_pkgname" 'calamares')
 
+options=('!debug')  # no debug
 
 source=("https://codeberg.org/Calamares/calamares/releases/download/v$pkgver/calamares-$pkgver.tar.gz")
 sha256sums=('SKIP') # IMPORTANTE: Da aggiornare!

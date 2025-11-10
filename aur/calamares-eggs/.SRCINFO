@@ -33,6 +33,7 @@ pkgbase = calamares-eggs
 	provides = calamares=3.3.14
 	conflicts = calamares
 	conflicts = calamares
+	options = !debug
 	source = https://codeberg.org/Calamares/calamares/releases/download/v3.3.14/calamares-3.3.14.tar.gz
 	sha256sums = SKIP
 
