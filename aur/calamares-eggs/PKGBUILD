@@ -1,15 +1,13 @@
-# Maintainer: 
+# Maintainer:
 # Piero Proietti <piero[dot]proietti[at]gmail.com>
-# Original from : Kenny Strawn <Kenny[dot]Strawn[at]gmail[dot]com>
-# 
+#
 
 _pkgname="calamares"
 pkgname="$_pkgname-eggs"
+pkgver=3.3.14
+pkgrel=1
+_pkgsrc="$_pkgname-$pkgver"
 
-#_commit="78d4208a03b0abdfb68e94c9c08a28f37a473ee6"
-_commit="c9e49988651a1c7c2881810ec465446a1f96d822"
-pkgver=3.4.0
-pkgrel=2
 pkgdesc="calamares-eggs: supply by penguins-eggs project"
 url="https://codeberg.org/Calamares/calamares"
 license=("GPL-3.0-or-later")
@@ -21,7 +19,7 @@ depends=(
   'hwinfo'
   'kconfig'
   'kcoreaddons'
-  'kcrash' # inserted piero 
+  'kcrash' # inserted piero
   'ki18n'
   'kiconthemes'
   'kpmcore'
@@ -45,55 +43,12 @@ makedepends=(
 )
 
 provides=("$_pkgname=${pkgver%%.r*}")
+
 conflicts=("$_pkgname" 'calamares')
 
-backup=(
-  #'usr/share/calamares/modules/bootloader.conf'
-  #'usr/share/calamares/modules/displaymanager.conf'
-  #'usr/share/calamares/modules/initcpio.conf'
-  #'usr/share/calamares/modules/unpackfs.conf'
-)
 
-_pkgsrc="$_pkgname" # commit
-#_pkgsrc="$_pkgname-$pkgver" # released
-
-source=("git+https://codeberg.org/Calamares/calamares#commit=${_commit}")
-#source=("https://codeberg.org/Calamares/calamares/releases/download/v$pkgver/calamares-$pkgver.tar.gz")
-sha256sums=('dad76589f87ed0221d7f2dd14d010bc6cd3bcf6914bee8e5df426e56538b1e08')
-_pkgver() {
-  cd "$_pkgsrc"
-
-  local _regex='^set\(CALAMARES_VERSION ([0-9]+\.[0-9]+\.[0-9]+([^0-9].*)?)\)\s*$'
-  local _file='CMakeLists.txt'
-
-  local _line=$(
-    grep -E "$_regex" "$_file" | head -1
-  )
-  local _version=$(
-    printf '%s' "$_line" | sed -E "s@$_regex@\1@;s@alpha@a@;s@beta@b@;s@-@.@"
-  )
-  local _line=$(
-    printf '%s' "$_line" | sed -E 's@\(@\\(@;s@\)@\\)@'
-  )
-  local _commit=$(
-    git log -G "$_line" -1 --pretty=oneline --no-color | sed 's@\ .*$@@'
-  )
-  local _revision=$(
-    git rev-list --count --cherry-pick "$_commit"...HEAD
-  )
-  local _hash=$(
-    git rev-parse --short=7 HEAD
-  )
-
-  printf '%s.r%s.g%s' \
-    "$_version" \
-    "$_revision" \
-    "$_hash"
-}
-
-prepare() {
-  cd "$_pkgsrc"
-}
+source=("https://codeberg.org/Calamares/calamares/releases/download/v$pkgver/calamares-$pkgver.tar.gz")
+sha256sums=('SKIP') # IMPORTANTE: Da aggiornare!
 
 
 build() {
