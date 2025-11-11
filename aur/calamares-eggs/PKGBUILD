@@ -2,13 +2,12 @@
 # Piero Proietti <piero[dot]proietti[at]gmail.com>
 #
 
-_pkgname="calamares"
-pkgname="$_pkgname-eggs"
+pkgname="calamares"
 pkgver=3.3.14
 pkgrel=1
-_pkgsrc="$_pkgname-$pkgver"
+_pkgsrc="$pkgname-$pkgver"
 
-pkgdesc="calamares-eggs: supply by penguins-eggs project"
+pkgdesc="calamares: supply by penguins-eggs project"
 url="https://codeberg.org/Calamares/calamares"
 license=("GPL-3.0-or-later")
 arch=('i686' 'x86_64')
@@ -42,9 +41,7 @@ makedepends=(
   'qt6-translations'
 )
 
-provides=("$_pkgname=${pkgver%%.r*}")
-
-conflicts=("$_pkgname" 'calamares')
+provides=("$pkgname=${pkgver%%.r*}")
 
 options=('!debug')  # no debug
 
