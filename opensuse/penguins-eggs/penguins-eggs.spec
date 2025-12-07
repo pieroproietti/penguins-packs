@@ -24,7 +24,7 @@
 %define _gpg_name none
 
 # BootloadersVersion
-%define bootloadersver 25.9.8
+%define bootloadersver 25.11.27
 
 Name:           %{app_name}
 Version: 25.10.30

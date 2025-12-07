@@ -38,7 +38,7 @@ pkgbase = penguins-eggs
 	optdepends = zsh-completions: eggs autocomplete
 	options = !strip
 	source = git+https://github.com/pieroproietti/penguins-eggs.git#tag=v25.11.8
-	source = bootloaders.tar.gz::https://github.com/pieroproietti/penguins-bootloaders/releases/download/v25.9.8/bootloaders.tar.gz
+	source = bootloaders.tar.gz::https://github.com/pieroproietti/penguins-bootloaders/releases/download/v25.11.27/bootloaders.tar.gz
 	sha256sums = 4a642beff3ed31ccce5eae0ffb709b4e1262a19ccb908cd83ebc6bd85272c553
 	sha256sums = c5dcfd82a8e65160af5c93365f07776a00d44e8b531d6641f4cadbbe7b4b5baf
 

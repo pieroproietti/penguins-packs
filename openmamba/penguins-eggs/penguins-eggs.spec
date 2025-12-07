@@ -5,7 +5,7 @@
 %define shortcommit %(echo %{commit} | cut -c1-7)
 
 # BootloadersVersion
-%define bootloadersver 25.9.8
+%define bootloadersver 25.11.27
 
 Name:          penguins-eggs
 Version: 25.10.5

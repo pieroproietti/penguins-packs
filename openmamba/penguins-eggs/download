@@ -3,7 +3,7 @@
 clear
 echo downlad
 
-_bootloadersver=25.9.8
+_bootloadersver=25.11.27
 
 version="25.10.5"
 name="penguins-eggs"

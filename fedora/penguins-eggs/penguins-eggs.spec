@@ -19,7 +19,7 @@
 %global debug_package %{nil}
 
 # BootloadersVersion
-%define bootloadersver 25.9.8
+%define bootloadersver 25.11.27
 
 Name:           %{app_name}
 Version: 25.11.7

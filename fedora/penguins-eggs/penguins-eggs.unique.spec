@@ -176,5 +176,5 @@ install -m 644 assets/eggs.png %{buildroot}%{_datadir}/pixmaps/eggs.png
 %{_mandir}/man1/eggs.1.gz
 
 %changelog
-* Wed Sep 10 2025 Piero Proietti <piero.proietti@gmail.com> - 25.9.8-1
+* Wed Sep 10 2025 Piero Proietti <piero.proietti@gmail.com> - 25.11.27-1
 - Initial package for Fedora and openSUSE
