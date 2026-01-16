@@ -6,20 +6,18 @@ There is no need to use this repository for the creation of DEB packages, which 
 
 ## AlmaLinux/RockyLinux (RPM)
 * `cd el9/penguins-eggs`
-* `./c|./b`
+* `./clean|./build`
 
 ## Alpine Linux (APK)
 * See: [penguins-alpine](https://github.com/pieroproietti/penguins-alpine).
 
-
-## ArchLinux (PKGBUILD)
+## ArchLinux [aur] (PKGBUILD)
 * `cd aur/penguins/eggs`
-* `./m`
+* `./clean|./build`
 
 [calamares](./aur/calamares)
 * `cd aur/calamares`
-* `./clean`
-* `./build`
+* `./clean|./build`
 
 #### Instructions
 [Publish package to AUR](./PUBLISH.md), link to 
@@ -27,11 +25,11 @@ There is no need to use this repository for the creation of DEB packages, which 
 
 ## Fedora  (RPM)
 * `cd fedora/penguins-eggs`
-* `./c|./b`
+* `./clean|./build`
 
 ## Manjaro (PKGBUILD)
 * `cd manjaro/penguins-eggs`
-* `./m`
+* `./clean|./build`
 
 [penguins-eggs on Manjaro community](https://gitlab.manjaro.org/packages/community/penguins-eggs)
 
