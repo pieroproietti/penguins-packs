@@ -16,9 +16,10 @@ There is no need to use this repository for the creation of DEB packages, which 
 * `cd aur/penguins/eggs`
 * `./m`
 
-[calamares-eggs](./aur/calamares-eggs)
+[calamares](./aur/calamares)
 * `cd aur/calamares-eggs`
-* `./m`
+* `./clean`
+* `./build`
 
 #### Instructions
 [Publish package to AUR](./PUBLISH.md), link to 
