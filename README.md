@@ -17,7 +17,7 @@ There is no need to use this repository for the creation of DEB packages, which 
 * `./m`
 
 [calamares](./aur/calamares)
-* `cd aur/calamares-eggs`
+* `cd aur/calamares`
 * `./clean`
 * `./build`
 
