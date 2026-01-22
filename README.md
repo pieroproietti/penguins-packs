@@ -1,8 +1,16 @@
 # penguins-packs
 
-This repository started as `penguins-eggs-pkgbuilds` and included package creation for Arch and Manjaro. Later the package creation for AlpineLinux was included, finally the rpm packages for AlmaLinux/Rock, fedora, Openmamba and OpenSuSE were included.
+This repository contains instructions for creating penguins-eggs packages for different distros:
+- Alpine Linux (APK)
+- AlmaLinux/RockyLinux (RPM)
+- ArchLinux (PKGBUILD)
+- Fedora (RPM)
+- Manjaro (PKGBUILD)
+- Openmamba (RPM)
+- OpenSuSE (RPM)
 
-There is no need to use this repository for the creation of DEB packages, which is done directly from penguins-eggs sources, using the command: `pnpm deb`
+It is not necessary to use this repository for package creation (DEB), which is performed directly from the penguins-eggs sources using the command: `pnpm deb`
+
 
 ## AlmaLinux/RockyLinux (RPM)
 * `cd el9/penguins-eggs`
@@ -50,3 +58,9 @@ There is no need to use this repository for the creation of DEB packages, which 
 [calamares](./opensuse/calamares)
 * `cd opensuse/calamares`
 * `./download|./build`
+
+# Copyright and licenses
+
+Copyright (c) 2017, 2026
+[Piero Proietti](https://penguins-eggs.net/about-me.html), dual licensed under
+the MIT or GPL Version 2 licenses.
