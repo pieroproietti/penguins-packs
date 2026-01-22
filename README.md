@@ -12,18 +12,23 @@ There is no need to use this repository for the creation of DEB packages, which 
 * See: [penguins-alpine](https://github.com/pieroproietti/penguins-alpine).
 
 ## ArchLinux [aur] (PKGBUILD)
-* `cd aur/penguins/eggs`
+[penguins-eggs](./aur/penguins-eggs)
+* `cd aur/penguins-eggs`
 * `./clean|./build`
 
 [calamares](./aur/calamares)
 * `cd aur/calamares`
 * `./clean|./build`
 
+[ckbcomp](./aur/ckbcomp)
+* `cd aur/ckbcomp`
+* `./build`
+
 #### Instructions
 [Publish package to AUR](./PUBLISH.md), link to 
 [penguins-eggs on AUR](https://aur.archlinux.org/packages/penguins-eggs)
 
-## Fedora  (RPM)
+## Fedora (RPM)
 * `cd fedora/penguins-eggs`
 * `./clean|./build`
 
@@ -35,4 +40,13 @@ There is no need to use this repository for the creation of DEB packages, which 
 
 ## Openmamba (RPM)
 * `cd openmamba/penguins-eggs`
-* `./c|./d|./b`
+* `./clean|./download|./build`
+
+## OpenSuSE (RPM)
+[penguins-eggs](./opensuse/penguins-eggs)
+* `cd opensuse/penguins-eggs`
+* `./clean|./download|./build`
+
+[calamares](./opensuse/calamares)
+* `cd opensuse/calamares`
+* `./download|./build`
